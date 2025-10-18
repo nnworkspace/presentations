@@ -10,23 +10,40 @@ To start the slide show:
 or 
 
 ```sh
+pnpm slidev android_key_attestation.md --open
+```
+or
+
+```sh
 npm exec -c 'slidev "<slides_file_name>.md" --port 3030'
 ``` 
 
 See the [slides.md](./slides.md) for Slidev related features and examples. 
 
+## To build all presentations:
+
+```sh
+pnpm build
+``` 
+
 ## Project structure
 
 ```sh
 presentations/
-├── slides/
-│   ├── android_key_attestation.md
-│   └── google_keystore_apis.md
+├── public/
+│   ├── presentation1/
+│   │   └── image1.png
+│   └── presentation2/
+│       └── image1.jpg
 ├── styles/
 │   └── index.ts
 ├── package.json
 └── vercel.json
+├── presentation1.md
+└── presentation2.md
+├── ....
 ``` 
+- `public`: Contains static files for the presentations, usually images.
 - `slides`: Contains all my presentation Markdown files.
 - `styles`: For my global, shared styles.
 - `package.json`: build spec.

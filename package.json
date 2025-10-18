@@ -3,9 +3,9 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "build": "slidev build",
-    "dev": "slidev --open",
-    "export": "slidev export",
+    "build": "npm run clean && for file in *.md; do if [ \"$file\" != \"README.md\" ]; then slidev build \"$file\" --out \"dist/$(basename \"$file\" .md)\"; fi; done",
+    "dev": "echo \"Please run 'pnpm slidev your-presentation.md' to start a dev server.\"",
+    "export": "for file in *.md; do if [ \"$file\" != \"README.md\" ]; then slidev export \"$file\" --output \"dist/$(basename \"$file\" .md).pdf\"; fi; done",
     "clean": "rm -rf dist"
   },
   "dependencies": {

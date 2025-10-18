@@ -67,7 +67,7 @@ This presentation is a practical breakdown for Android-based devices, distinguis
 ---
 layout: image-right
 layoutClass: gap-16
-image: /images/android_key_attestation.jpg
+image: /android_key_attestation/android_key_attestation.jpg
 ---
 
 <div class="text-sm">
@@ -91,7 +91,7 @@ Mechanism: *Android Key Attestation*
 ---
 layout: image-right
 layoutClass: gap-16
-image: /images/android_key_attestation_process.png
+image: /android_key_attestation/android_key_attestation_process.png
 ---
 
 # Android Keystore: Ensuring Trusted Key Generation
