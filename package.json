@@ -1,0 +1,20 @@
+{
+  "name": "presentations",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build": "slidev build",
+    "dev": "slidev --open",
+    "export": "slidev export",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "@slidev/cli": "^52.2.5",
+    "@slidev/theme-default": "latest",
+    "@slidev/theme-seriph": "latest",
+    "vue": "^3.5.22"
+  },
+  "slidev": {
+    "style": "styles/index.ts"
+  }
+}
