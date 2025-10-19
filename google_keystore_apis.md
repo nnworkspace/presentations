@@ -46,7 +46,7 @@ layout: two-cols
 layoutClass: gap-16
 ---
 
-# The Core Guarantee
+# The core guarantee
 
 How does the Android Keystore ensure keys are generated and remain inside secure hardware?
 
@@ -66,7 +66,7 @@ image: /google_keystore_apis/google_keystore_security_3_pillars.png
 title: Three pillars of security
 ---
 
-## Three Pillars of Security
+## Three pillars of security
 
 1. **Hardware Abstraction**
     - The Keymaster HAL
@@ -112,10 +112,10 @@ A developer can demand the highest level of security available.
 ---
 layout: two-cols-header
 layoutClass: gap-16
-title: '2. Developer Specifications: TEE vs. StrongBox'
+title: '2. Developer specifications: TEE vs. StrongBox'
 --- 
 
-## 2. Developer Specifications: TEE vs. StrongBox
+## 2. Developer specifications: TEE vs. StrongBox
 
 ::right::
 
@@ -134,10 +134,10 @@ title: '2. Developer Specifications: TEE vs. StrongBox'
 - Considered more secure due to physical tamper resistance.
 
 ---
-title: '2. Developer Specifications: Requesting a StrongBox Key'
+title: '2. Developer specifications: requesting a StrongBox key'
 ---
 
-## 2. Developer Specifications: Requesting a StrongBox Key
+## 2. Developer specifications: requesting a StrongBox key
 
 ```java
 // Example of requesting key generation in StrongBox
@@ -157,7 +157,7 @@ kpg.generateKeyPair();
 
 ---
 
-# The Big Question...
+# The big question...
 
 How can we be certain the hardware *actually* followed our rules?
 
@@ -168,11 +168,11 @@ image: /google_keystore_apis/key_attestation_overview.png
 title: '3. Key Attestation: Cryptographic Proof'
 ---
 
-## 3. Key Attestation: Cryptographic Proof
+## 3. Key attestation: cryptographic proof
 
 When we generate a key, we can request a signed certificate chain that proves its properties.
 
-### The Process:
+### The process:
 
 - Our app requests to generate a key pair **with attestation**.
 - The secure hardware (TEE or StrongBox) creates the key pair.
@@ -181,7 +181,7 @@ When we generate a key, we can request a signed certificate chain that proves it
 
 ---
 
-## Verifying the Attestation
+## Verifying the attestation
 
 By parsing the certificate, our server gets cryptographic proof of:
 
