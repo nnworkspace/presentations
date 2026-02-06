@@ -15,6 +15,7 @@ mdc: true
 # Élan
 ## Institutional Governance Engineering
 
+
 The disciplined momentum of a system that knows *why* it moves.
 
 <div class="abs-br m-6 flex gap-2">
@@ -23,6 +24,8 @@ The disciplined momentum of a system that knows *why* it moves.
     <carbon-logo-github />
   </a>
 </div>
+
+Ning Zhao
 
 <!--
 Presenter Notes:
