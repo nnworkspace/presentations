@@ -176,6 +176,8 @@ Establishes the **Fundamental Constraints**:
 
 </div>
 
+<br>
+
 > "Civilised systems begin with law."
 
 ---
@@ -248,13 +250,51 @@ If code targets `v1.2.0` but the spec is `v1.3.0`, the build fails.
 
 </div>
 
+<br>
+
 > "Civilised systems require a shared understanding of time and state."
-
-
 
 ---
 
-# 30-Architecture: The Blueprint
+# 10-Legal & 20-Rulebook: The Policy Foundation
+
+The inputs to the system.
+
+<div class="grid grid-cols-2 gap-10 mt-6">
+
+<div>
+
+### 10-Legal Framework
+**The Mandate**.
+Policy is not background context; it is **foundational input**.
+
+- **Purpose**: Preserves legislative intent.
+- **Content**: Treaties, Regulations, Acts.
+- **Role**: Defines **Rights**.
+
+</div>
+
+<div>
+
+### 20-Rulebook
+**The Operational Logic**.
+The bridge between Law and Tech.
+
+- **Purpose**: Translates "Mandates" into "Rules".
+- **Content**: Domain Logic (e.g. Payments, Medical).
+- **Role**: Defines **Obligations**.
+
+</div>
+
+</div>
+
+<br>
+
+> "Code does not implement policy; code implements rules."
+
+---
+
+# 30-architecture: The Blueprint
 
 Architecture acts as both **Reference** and **Constraint**.
 
@@ -286,11 +326,13 @@ Specifications are **anchored** to the architecture.
 
 </div>
 
+<br>
+
 > "Architecture tells the builder **where** the walls are, so the Specification can define **how** to paint them."
 
 ---
 
-# 40-Specifications: The Pivot Point
+# 40-specifications: The Pivot Point
 
 Specifications are the **load-bearing structure** of the project.
 
@@ -310,123 +352,177 @@ Specifications are the **load-bearing structure** of the project.
 ### What they ARE
 - **Stable**
 - **Versioned**
-- **Machine-Readable**
+- **Easily consumable by machine**
 - **Normative**
 
 </div>
 
 </div>
 
+<br>
+
 > "Tickets coordinate work. Specifications define the system."
 
 ---
 
-# 50-Tests: The Evidence (Test-Driven Governance)
+# 50-tests: The Evidence
 
-We define **HOW** we verify before we build **WHAT** verifies.
+Not just "testing". **System-Level Assurance**.
 
 <div class="grid grid-cols-2 gap-10 mt-6">
 <div>
 
-### Claims
-"The system must preclude reverse-waterfall failure."
+### The Philosophy
+We define **How to Verify** before we build **What Verifies**.
+
+- **Claims**: "What must be true?" (Stable)
+- **Evidence**: "How do we prove it?" (Evolving)
+- **Tools**: Implementation details (Transient)
 
 </div>
 
 <div>
 
-### Evidence
-"Here is the cryptographic proof / test run that confirms it."
+### Assurance Categories
+Structured evidence, not random scripts.
+
+- **100-Conformance**: Functional Scenarios.
+- **200-Contracts**: API Schemas & Interfaces.
+- **300-Security**: Abuse Cases & Auth Rules.
+- **400-Operational**: Performance & Resilience SLOs.
+- **900-Vectors**: Golden Data & Invariants.
 
 </div>
 </div>
 
 <br>
 
-**Key Principle**:
-Verification artefacts (50) are **upstream** of Implementation (60).
-Code exists primarily to **pass the tests** and produce the evidence.
+> "Unit tests belong in the code (60). **System Assurance** belongs here (50)."
 
 ---
 
-# 60-Code: The Workbench
+# 60-code: The Workbench
 
 Implementation is distributed, but governance is unified.
 
-<div class="grid grid-cols-2 gap-4">
+<div class="grid grid-cols-2 gap-8 mt-6">
 
 <div>
 
-### Component-Based
-- **Not a Monolith**.
-- Components owned by different institutions (ECB, PSPs, etc.).
-- Different technology stacks (Java, Node, Rust).
+### Domain Components
+The actual functional pieces (illustrative).
+- **`access-gateway`**: Entry point.
+- **`desp`**: Central processing.
+- **`psp-1`**: Participant adapter.
+
+*Owned by different institutions. May live in different repos.*
 
 </div>
 
 <div>
 
-### Unified by Governance
-- Every component has a `manifest.yaml`.
-- Every component traces back to `40-Specs`.
-- Every component is policed by `80-Automation`.
+### Governance Instrumentation
+Shared libraries that enforce the references to upstream specs and other rules.
+- **`governance-common-java`**
+- **`governance-common-rust`**
+- **`governance-common-nodejs`**
+
+*Polyglot unification of traceability.*
 
 </div>
 
 </div>
+
+> "Components first, not features. Unified by Manifests."
 
 ---
 
-# 80-Automation: The "Police"
+# 70-reports: Derived Evidence
 
-Active Governance vs. Passive Documentation.
+Not manually authored. **Generated from the Truth**.
 
-<div class="mt-4">
+<div class="grid grid-cols-2 gap-8 mt-6">
 
-**Bureaucracy-as-Code**
-Linting rules (`LINT-C1`, `LINT-T2`) enforce the constitution.
+<div>
 
-</div>
+### 1. The Matrix ("Traceability")
+- **`traceability/`**: Links Specs (`40-`) to Code (`60-`).
+- *Proof that every line of code has a reason.*
 
-```mermaid
-sequenceDiagram
-    participant Dev as Developer
-    participant Git as Workbench
-    participant CI as 80-Automation
-    
-    Dev->>Git: Commit Code
-    Git->>CI: Trigger Pipeline
-    CI->>CI: Check Traceability (Spec -> Code)
-    CI->>CI: Check Evidence (Tests Passed?)
-    
-    alt Violation
-        CI-->>Dev: ❌ Reject: "LINT-T2: Missing Spec Reference"
-    else Compliance
-        CI-->>Dev: ✅ Accept & Generate Report
-    end
-```
-
----
-
-# 70-Reports: The Confidence (For Managers)
-
-Where "Trust" becomes visible.
-
-<div class="mt-6 p-4 border border-green-500 rounded">
-
-### Not Manual Status Slides
-These are **Automated, Truth-Based Views**.
-
-*   **Progress**: What % of the Rulebook is implemented?
-*   **Coverage**: Which specs are missing tests?
-*   **Compliance**: Are we legally safe?
+### 2. The Risk State ("Assurance")
+- **`assurance/`**: Security & Test validation results.
+- **`dependencies/`**: SBOM & Supply Chain risks.
 
 </div>
+
+<div>
+
+### 3. The Audit ("Compliance")
+- **`compliance/`**: Evidence snapshots for regulators.
+- **`weekly-progress/`**: Automated status summaries.
 
 <br>
 
-Managers do not need to read code. They need to read **Audit-Ready Evidence**.
-This folder provides exactly that, generated fresh on every commit.
+> "Trust comes from **Reproducibility**, not PowerPoints."
+
+</div>
+
+</div>
+
+---
+
+# 80-automation: Active Governance Engine
+
+The **Constitutional Rails**.
+
+<div class="grid grid-cols-2 gap-8 mt-6">
+
+<div>
+
+### 1. Pipelines ("The Factory")
+- **Gatekeeper**: Static Policy & Drift Detection.
+- **Orchestration**: Ephemeral TestNets & Conformance.
+- **Reporting**: Chain of Custody & WORM Archiving.
+
+### 2. Analytical ("The Risk Engine")
+- **Spec Architect**: Parses Markdown into Semantic Graph.
+- **Change Impact Analyzer**: Calculates "Blast Radius".
+
+### 3. AI Oracle ("The Advisor")
+- **RAG-based**: Context-aware guidance.
+- **Reduction**: Low cognitive load.
+
+<br>
+
+> "Bureaucracy-as-Code: Turning bottlenecks into enablers."
+
+</div>
+
+<div>
+
+```mermaid {scale: 0.5}
+sequenceDiagram
+    actor Contributor
+    participant Git as Workbench
+    participant CI as 80-Automation
+    
+    Contributor->>Git: Commit
+    Git->>CI: Pipeline
+    CI->>CI: Trace Check
+    CI->>CI: Evidence Check
+    CI->>CI: Change Impact Analysis
+    CI->>CI: Other Checks and Analysis
+    
+    alt Violation
+        CI-->>Contributor: ❌ Reject
+    else Compliance
+        CI-->>Contributor: ✅ Accept
+    end
+```
+
+</div>
+
+</div>
 
 ---
 
