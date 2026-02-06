@@ -172,7 +172,7 @@ Establishes the **Fundamental Constraints**:
 
 <br>
 
-> "Civilised systems begin with law."
+> Civilised systems begin with law.
 
 <br>
 
@@ -210,29 +210,39 @@ We use precise instruments to enforce the constitution.
 
 <div>
 
-### artefact-classification.md
-**Visibility & Handling**.
-Every file must declare its audience (Public, Confidential) and Owner.
+<div class="governance-card">
+  <h4><code>artefact-classification.md</code></h4>
+  <p><b>Visibility & Handling</b>. Every file must declare its classification (public, restricted, confidential), owner, and audience in the front matter.</p>
+</div>
 
-### logical-system-and-visibility.md
-**The Boundary**.
-Logical Unity vs. Physical Distribution. The system is one, even if repos are many.
+<div class="governance-card">
+  <h4><code>logical-system-and-visibility.md</code></h4>
+  <p><b>The Boundary</b>. Logical Unity vs. Physical Distribution. The system is one, even if repos are many.</p>
+</div>
+
+<div class="governance-card">
+  <h4><code>communication-and-project-management.md</code></h4>
+  <p><b>The Dialogue</b>. "Communication is part of the system." Issues are records of reasoning, not just task trackers.</p>
+</div>
 
 </div>
 
 <div>
 
-### branching-strategy.md
-**The Workflow**.
-Protected Main. Feature Branches. No Release Branches (Tags only).
+<div class="governance-card">
+  <h4><code>branching-strategy.md</code></h4>
+  <p><b>The Workflow</b>. Protected Main. Feature Branches. No Release Branches (Tags only).</p>
+</div>
 
-### commit-message-conventions.md
-**The History**.
-Strict rules (Conventional Commits) to ensure the git log is an audit trail.
+<div class="governance-card">
+  <h4><code>commit-message-conventions.md</code></h4>
+  <p><b>The History</b>. Strict rules (Conventional Commits) to ensure the git log is an audit trail.</p>
+</div>
 
-### linting-rules.md
-**The Enforcer**.
-Automated rules (`LINT-C1`) that fail the build if governance is violated.
+<div class="governance-card">
+  <h4><code>linting-rules.md</code></h4>
+  <p><b>The Enforcer</b>. Automated rules (<code>LINT-C1</code>) that fail the build if governance is violated.</p>
+</div>
 
 </div>
 
@@ -272,7 +282,7 @@ If code targets `v1.2.0` but the spec is `v1.3.0`, the build fails.
 
 <br>
 
-> "Civilised systems require a shared understanding of time and state."
+> Civilised systems require a shared understanding of time and state.
 
 ---
 
@@ -310,7 +320,7 @@ The bridge between Law and Tech.
 
 <br>
 
-> "Code does not implement policy; code implements rules."
+> Code does not implement policy; code implements rules.
 
 ---
 
@@ -348,7 +358,7 @@ Specifications are **anchored** to the architecture.
 
 <br>
 
-> "Architecture tells the builder **where** the walls are, so the Specification can define **how** to paint them."
+> Architecture tells the builder **where** the walls are, so the Specification can define **how** to paint them.
 
 ---
 
@@ -381,7 +391,7 @@ Specifications are the **load-bearing structure** of the project.
 
 <br>
 
-> "Tickets coordinate work. Specifications define the system."
+> Tickets coordinate work. Specifications define the system.
 
 ---
 
@@ -417,7 +427,7 @@ Structured evidence, not random scripts.
 
 <br>
 
-> "Unit tests belong in the code (60). **System Assurance** belongs here (50)."
+> Unit tests belong in the code (60). **System Assurance** belongs here (50).
 
 ---
 
@@ -453,7 +463,7 @@ Shared libraries that enforce the references to upstream specs and other rules.
 
 </div>
 
-> "Components first, not features. Unified by Manifests."
+> Components first, not features. Unified by Manifests.
 
 ---
 
@@ -469,6 +479,8 @@ Not manually authored. **Generated from the Truth**.
 - **`traceability/`**: Links Specs (`40-`) to Code (`60-`).
 - *Proof that every line of code has a reason.*
 
+<br>
+
 ### 2. The Risk State ("Assurance")
 - **`assurance/`**: Security & Test validation results.
 - **`dependencies/`**: SBOM & Supply Chain risks.
@@ -483,7 +495,7 @@ Not manually authored. **Generated from the Truth**.
 
 <br>
 
-> "Trust comes from **Reproducibility**, not PowerPoints."
+> Trust comes from **Reproducibility**, not PowerPoints.
 
 </div>
 
@@ -514,7 +526,7 @@ The **Constitutional Rails**.
 
 <br>
 
-> "Bureaucracy-as-Code: Turning bottlenecks into enablers."
+> Bureaucracy-as-Code: Turning bottlenecks into enablers.
 
 </div>
 
