@@ -3,7 +3,7 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "build": "npm run clean && for file in *.md; do if [ \"$file\" != \"README.md\" ]; then slidev build \"$file\" --base /$(basename \"$file\" .md)/ --out \"dist/$(basename \"$file\" .md)\"; fi; done",
+    "build": "npm run clean && for file in *.md; do if [ \"$file\" != \"README.md\" ]; then slidev build \"$file\" --base /$(basename \"$file\" .md)/ --out \"dist/$(basename \"$file\" .md)\"; fi; done && node scripts/generate-index.js",
     "dev": "echo \"Please run 'pnpm slidev your-presentation.md' to start a dev server.\"",
     "export": "for file in *.md; do if [ \"$file\" != \"README.md\" ]; then slidev export \"$file\" --base /$(basename \"$file\" .md)/ --output \"dist/$(basename \"$file\" .md).pdf\"; fi; done",
     "clean": "rm -rf dist"
