@@ -96,7 +96,7 @@ It is not about a slow waterfall process. It is about explicit **Layers of Inten
 
 A visual stacking of intent.
 
-<div class="grid grid-cols-2 gap-4">
+<div class="grid grid-cols-2 gap-2 text-xs">
 
 <div>
 
@@ -116,28 +116,141 @@ A visual stacking of intent.
 
 <div class="flex items-center justify-center">
 
-```mermaid {scale: 0.9}
+```mermaid {scale: 0.4}
 graph TD
-    L[10-Legal] --> R[20-Rulebook]
-    R --> A[30-Arch]
-    A --> S[40-Specs]
-    S --> T[50-Tests]
-    T --> C[60-Code]
+    R[20-Rulebook] --> |references| L[10-Legal]
+    A[30-Arch] --> |references| R[20-Rulebook]
+    S[40-Specs] --> |references| A[30-Arch]
+    T[50-Tests] --> |references| S[40-Specs]
+    C[60-Code] --> |references| T[50-Tests]
     
-    auth[80-Automation] -.->|Enforces| L
-    auth -.->|Enforces| R
-    auth -.->|Enforces| A
-    auth -.->|Enforces| S
-    auth -.->|Enforces| T
-    auth -.->|Enforces| C
+    auth[80-Automation] -.->|Enforces<br>governance| L
+    auth -.->|Enforces<br>governance| R
+    auth -.->|Enforces<br>governance| A
+    auth -.->|Enforces<br>governance| S
+    auth -.->|Enforces<br>governance| T
+    auth -.->|Enforces<br>governance| C
+    auth -.->|Generates| Rep[70-Reports]
     
-    T -.->|Generates| Rep[70-Reports]
-    C -.->|Generates| Rep
+    Rep -.-> |Summarizes| L
+    Rep -.-> |Summarizes| R
+    Rep -.-> |Summarizes| A
+    Rep -.-> |Summarizes| S
+    Rep -.-> |Summarizes| T
+    Rep -.-> |Summarizes| C
 ```
 
 </div>
 
 </div>
+
+---
+
+# 00-project-governance: The Constitution
+
+The rules of the workbench.
+
+<div class="grid grid-cols-2 gap-10 mt-6">
+
+<div>
+
+### Normative by Design
+Governance is not an overlay. It is **part of the system**.
+
+- **Who**: Project Governance Board.
+- **What**: Defines how we work, not what we build.
+- **Why**: To prevent institutional amnesia.
+
+</div>
+
+<div>
+
+### Key Purpose
+Establishes the **Fundamental Constraints**:
+
+1.  **Classification**: What is Public vs. Restricted?
+2.  **Traceability**: How do we link Policy to Code?
+3.  **Auditability**: How do we prove what happened?
+
+</div>
+
+</div>
+
+> "Civilised systems begin with law."
+
+---
+
+# 00-project-governance: The Instruments
+
+We use precise instruments to enforce the constitution.
+
+<div class="grid grid-cols-2 gap-6 mt-4">
+
+<div>
+
+### artefact-classification.md
+**Visibility & Handling**.
+Every file must declare its audience (Public, Confidential) and Owner.
+
+### logical-system-and-visibility.md
+**The Boundary**.
+Logical Unity vs. Physical Distribution. The system is one, even if repos are many.
+
+</div>
+
+<div>
+
+### branching-strategy.md
+**The Workflow**.
+Protected Main. Feature Branches. No Release Branches (Tags only).
+
+### commit-message-conventions.md
+**The History**.
+Strict rules (Conventional Commits) to ensure the git log is an audit trail.
+
+### linting-rules.md
+**The Enforcer**.
+Automated rules (`LINT-C1`) that fail the build if governance is violated.
+
+</div>
+
+</div>
+
+---
+
+# 00-project-governance: Configuration Management
+
+How we maintain order over time.
+
+<div class="grid grid-cols-2 gap-10 mt-6">
+
+<div>
+
+### The Philosophy: Atomic Baselines
+We do not version files. **We version Sets**.
+
+- **Manifests** (`manifest.yaml`) are the Single Source of Truth.
+- A "Release" is a snapshot of verifyable, compatible components.
+
+</div>
+
+<div>
+
+### Version-Aware Traceability
+Dependencies are explicit.
+
+`Trace: @spec=SPEC-SET-ONB:1.2.0`
+
+**Drift Detection**:
+If code targets `v1.2.0` but the spec is `v1.3.0`, the build fails.
+
+</div>
+
+</div>
+
+> "Civilised systems require a shared understanding of time and state."
+
+
 
 ---
 
@@ -149,11 +262,14 @@ Architecture acts as both **Reference** and **Constraint**.
 
 <div>
 
-### The "Privacy Firewall"
-Architecture defines the **Zones** within the system.
+### Three Primary Views
 
-- **Zone A**: Validated Identity (PSP).
-- **Zone B**: Pseudonymous Settlement (ECB).
+- **System Context**  
+  High-level ecosystem view.
+- **Component Inventory**  
+  Logical blocks & services.
+- **Security & Privacy Zones**  
+  Data boundaries & trust.
 
 </div>
 
