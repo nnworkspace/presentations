@@ -1,6 +1,19 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "buildCommand": "pnpm build",
-  "outputDirectory": "dist"
+  "outputDirectory": "dist",
+  "rewrites": [
+    {
+      "source": "/elan_intro/:match*",
+      "destination": "/elan_intro/index.html"
+    },
+    {
+      "source": "/android_key_attestation/:match*",
+      "destination": "/android_key_attestation/index.html"
+    },
+    {
+      "source": "/google_keystore_apis/:match*",
+      "destination": "/google_keystore_apis/index.html"
+    }
+  ]
 }
-
