@@ -79,16 +79,16 @@ A demonstrative workbench for **Institutional Governance Engineering**.
 
 <div class="mt-10 p-6 bg-gray-100 rounded-lg dark:bg-gray-800 border-l-8 border-blue-600">
 
-## Philosophy: Integrity > Velocity
+## Philosophy: Disciplined Momentum
 
-In high-stakes environments (e.g., Currency, Medical, Aerospace), you must prove that **what you built matches what you intended**.
+_A system that moves with confidence, because its constraints are visible, its intent explicit, and its decisions traceable._
 
 </div>
 
 <br>
 
 ### The "V-Model" Reimagined
-It is not about a slow waterfall process. It is about explicit **Layers of Intent**.
+It is not about a slow waterfall process. It is about explicit **Layers of Intent** supercharged by modern automation.
 
 ---
 
@@ -116,7 +116,7 @@ A visual stacking of intent.
 
 <div class="flex items-center justify-center">
 
-```mermaid {scale: 0.4}
+```mermaid {scale: 0.45}
 graph TD
     R[20-Rulebook] --> |references| L[10-Legal]
     A[30-Arch] --> |references| R[20-Rulebook]
@@ -132,12 +132,6 @@ graph TD
     auth -.->|Enforces<br>governance| C
     auth -.->|Generates| Rep[70-Reports]
     
-    Rep -.-> |Summarizes| L
-    Rep -.-> |Summarizes| R
-    Rep -.-> |Summarizes| A
-    Rep -.-> |Summarizes| S
-    Rep -.-> |Summarizes| T
-    Rep -.-> |Summarizes| C
 ```
 
 </div>
@@ -179,6 +173,32 @@ Establishes the **Fundamental Constraints**:
 <br>
 
 > "Civilised systems begin with law."
+
+<br>
+
+<div v-click>
+<div class="flex justify-center mt-4">
+
+```mermaid {scale: 0.6}
+graph LR
+    Rule(20-rule) --> |traces| Law(10-legal-framework)
+    Arch(30-architecture) --> |traces| Rule
+    Spec(40-specifications) --> |traces| Arch
+    Test(50-tests) --> |traces| Spec
+    Impl(60-code) --> |traces| Test
+    
+    style Law fill:#f9f,stroke:#333,stroke-width:2px
+    style Impl fill:#bbf,stroke:#333,stroke-width:2px
+    style Test fill:#bfb,stroke:#333,stroke-width:4px
+```
+
+</div>
+
+<div class="text-center text-sm font-bold text-red-600 dark:text-red-400">
+If the chain breaks, the build fails.
+</div>
+
+</div>
 
 ---
 
@@ -525,39 +545,53 @@ sequenceDiagram
 </div>
 
 ---
-
-# Traceability: The Golden Thread
-
-Every artefact is linked.
-
-```mermaid
-graph LR
-    Law(Law) --> Rule(Rule)
-    Rule --> Arch(Architecture)
-    Arch --> Spec(Specification)
-    Spec --> Test(Test/Evidence)
-    Test --> Impl(Implementation)
-    
-    style Law fill:#f9f,stroke:#333,stroke-width:2px
-    style Impl fill:#bbf,stroke:#333,stroke-width:2px
-    style Test fill:#bfb,stroke:#333,stroke-width:4px
-```
-
-<div class="text-center mt-10 text-xl font-bold">
-If the chain breaks, the build fails.
-</div>
-
----
 layout: center
 class: text-center
 ---
 
-# Summary
+# Summary: Institutional Confidence
 
-**Élan** is a system that allows diverse builders to work together without losing intent.
+Élan solves **Semantic Entropy** by bridging the gap between institutional ambition and execution.
 
-It replaces "Trust me" with **"Here is the proof"**.
+<div class="grid grid-cols-3 gap-6 mt-10 text-sm">
 
-<div class="mt-10">
-  <span class="text-2xl font-mono">Clone. Fork. Adapt.</span>
+<div>
+
+### 1. The Constitution
+Governance is not external. It is **integral part of the living system** (folder 00-20).<br>
+*Policy intent is the first dependency.*
+
+</div>
+
+<div>
+
+### 2. The Execution
+A unified environment for diverse builders (folder 30-60).<br>
+*Trace or Fail.*
+
+</div>
+
+<div>
+
+### 3. The Automation
+Active constraints that prevent drift (folder 80).<br>
+*Integrity with lightning speed.*
+
+</div>
+
+</div>
+
+<div class="mt-12 text-center">
+
+> We replace "Documentation Theatre" with **"Executable Truth"**.
+
+</div>
+
+<div class="mt-8 text-center flex flex-col items-center gap-4">
+  <span class="text-xl font-mono p-2 border rounded">Clone. Fork. Adapt.</span>
+  
+  <a href="https://github.com/nnworkspace/elan" target="_blank" alt="GitHub"
+    class="text-4xl slidev-icon-btn hover:text-blue-600 transition duration-300">
+    <carbon-logo-github />
+  </a>
 </div>

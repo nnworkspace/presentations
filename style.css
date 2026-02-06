@@ -1,0 +1,75 @@
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Merriweather:wght@300;400;700;900&display=swap');
+
+/* Institutional Theme */
+
+:root {
+    --slidev-theme-primary: #0F172A;
+    /* Institutional Navy */
+    --slidev-theme-secondary: #334155;
+    /* Slate */
+    --slidev-theme-accent: #2563EB;
+    /* Royal Blue */
+    --slidev-code-background: #F1F5F9;
+    --slidev-code-font-size: 0.9em;
+}
+
+/* Typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Merriweather', serif;
+    font-weight: 700;
+    color: var(--slidev-theme-primary);
+}
+
+p,
+li,
+div {
+    font-family: 'Inter', sans-serif;
+    color: #374151;
+    /* Gray 700 */
+}
+
+/* Title Slide Override */
+.slidev-layout.cover {
+    background-color: var(--slidev-theme-primary) !important;
+    color: white !important;
+}
+
+.slidev-layout.cover h1,
+.slidev-layout.cover h2,
+.slidev-layout.cover p {
+    color: white !important;
+}
+
+/* "Paper" Background for Content Slides */
+.slidev-layout.default {
+    background-color: #F8FAFC;
+    /* Slate 50 */
+}
+
+/* Blockquotes with Authority */
+blockquote {
+    border-left: 4px solid var(--slidev-theme-accent);
+    padding-left: 1rem;
+    font-style: italic;
+    color: var(--slidev-theme-secondary);
+    background: white;
+    padding: 1rem;
+    border-radius: 0 0.5rem 0.5rem 0;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+}
+
+/* Custom Utilities */
+.text-accent {
+    color: var(--slidev-theme-accent);
+}
+
+/* Mermaid Diagram refinement */
+.mermaid svg {
+    font-family: 'Inter', sans-serif !important;
+}
