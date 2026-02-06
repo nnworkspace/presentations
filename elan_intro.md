@@ -3,11 +3,11 @@ theme: seriph
 background: https://cover.sli.dev
 title: Élan Framework Introduction
 info: |
-  ## Élan Framework
-  Presentation for European Central Banks
+    ## Élan Framework
+    Presentation for European Central Banks
 class: text-center
 drawings:
-  persist: false
+    persist: false
 transition: slide-left
 mdc: true
 ---
@@ -43,7 +43,7 @@ Why do large-scale institutional projects struggle?
 
 <div v-click>
 
-### It's rarely a lack of skill.
+### It's rarely a lack of domain skill.
 It's usually **Semantic Entropy**.
 
 The gap between:
@@ -56,7 +56,7 @@ The gap between:
 
 ### The Symptom: Documentation Theatre
 
-- **Rules** live in static pdfs.
+- **Rules** live in static Word documents or PDFs.
 - **Code** lives in dynamic Git.
 - **They drift apart.**
 
@@ -119,12 +119,14 @@ A visual stacking of intent.
 ```mermaid {scale: 0.9}
 graph TD
     L[10-Legal] --> R[20-Rulebook]
-    R --> S[40-Specs]
+    R --> A[30-Arch]
+    A --> S[40-Specs]
     S --> T[50-Tests]
     T --> C[60-Code]
     
     auth[80-Automation] -.->|Enforces| L
     auth -.->|Enforces| R
+    auth -.->|Enforces| A
     auth -.->|Enforces| S
     auth -.->|Enforces| T
     auth -.->|Enforces| C
@@ -136,6 +138,39 @@ graph TD
 </div>
 
 </div>
+
+---
+
+# 30-Architecture: The Blueprint
+
+Architecture acts as both **Reference** and **Constraint**.
+
+<div class="grid grid-cols-2 gap-10 mt-6">
+
+<div>
+
+### The "Privacy Firewall"
+Architecture defines the **Zones** within the system.
+
+- **Zone A**: Validated Identity (PSP).
+- **Zone B**: Pseudonymous Settlement (ECB).
+
+</div>
+
+<div>
+
+### Traceability Bridge
+Specifications are **anchored** to the architecture.
+
+`Upstream Arch: @arch=SET-ARCH:0.1.0`
+
+**Constraint**: You cannot specify a feature that violates the architectural boundaries.
+
+</div>
+
+</div>
+
+> "Architecture tells the builder **where** the walls are, so the Specification can define **how** to paint them."
 
 ---
 
@@ -286,7 +321,8 @@ Every artefact is linked.
 ```mermaid
 graph LR
     Law(Law) --> Rule(Rule)
-    Rule --> Spec(Specification)
+    Rule --> Arch(Architecture)
+    Arch --> Spec(Specification)
     Spec --> Test(Test/Evidence)
     Test --> Impl(Implementation)
     
