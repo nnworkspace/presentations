@@ -110,3 +110,52 @@ blockquote {
     line-height: 1.4;
     margin-bottom: 0 !important;
 }
+
+/* Summary Cards (Slide 16) */
+.summary-card {
+    background: white;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    height: 100%;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -1px rgb(0 0 0 / 0.06);
+    transition: transform 0.2s ease-in-out;
+}
+
+.summary-card:hover {
+    transform: translateY(-2px);
+}
+
+.summary-card h3 {
+    margin-top: 0 !important;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    font-family: 'Merriweather', serif;
+    /* Ensure serif */
+}
+
+/* Variant 1: Constitution (Fuchsia/Purple - Law) */
+.summary-card.constitution {
+    border-top: 4px solid #d946ef;
+}
+
+.summary-card.constitution h3 {
+    color: #a21caf !important;
+}
+
+/* Variant 2: Execution (Blue - Implementation) */
+.summary-card.execution {
+    border-top: 4px solid #3b82f6;
+}
+
+.summary-card.execution h3 {
+    color: #1d4ed8 !important;
+}
+
+/* Variant 3: Automation (Emerald - Integrity/Pass) */
+.summary-card.automation {
+    border-top: 4px solid #10b981;
+}
+
+.summary-card.automation h3 {
+    color: #047857 !important;
+}

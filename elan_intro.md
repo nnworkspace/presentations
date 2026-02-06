@@ -568,9 +568,9 @@ class: text-center
 
 Élan solves **Semantic Entropy** by bridging the gap between institutional ambition and execution.
 
-<div class="grid grid-cols-3 gap-6 mt-10 text-sm">
+<div class="grid grid-cols-3 gap-6 mt-6 text-sm">
 
-<div>
+<div class="summary-card constitution">
 
 ### 1. The Constitution
 Governance is not external. It is **integral part of the living system** (folder 00-20).<br>
@@ -578,7 +578,7 @@ Governance is not external. It is **integral part of the living system** (folder
 
 </div>
 
-<div>
+<div class="summary-card execution">
 
 ### 2. The Execution
 A unified environment for diverse builders (folder 30-60).<br>
@@ -586,7 +586,7 @@ A unified environment for diverse builders (folder 30-60).<br>
 
 </div>
 
-<div>
+<div class="summary-card automation">
 
 ### 3. The Automation
 Active constraints that prevent drift (folder 80).<br>
@@ -596,17 +596,17 @@ Active constraints that prevent drift (folder 80).<br>
 
 </div>
 
-<div class="mt-12 text-center">
+<div class="mt-8 text-center">
 
 > We replace "Documentation Theatre" with **"Executable Truth"**.
 
 </div>
 
-<div class="mt-8 text-center flex flex-col items-center gap-4">
+<div class="mt-6 text-center flex flex-col items-center gap-0">
   <span class="text-xl font-mono p-2 border rounded">Clone. Fork. Adapt.</span>
   
   <a href="https://github.com/nnworkspace/elan" target="_blank" alt="GitHub"
-    class="text-4xl slidev-icon-btn hover:text-blue-600 transition duration-300">
+    class="-mt-4 text-4xl slidev-icon-btn hover:text-blue-600 transition duration-300">
     <carbon-logo-github />
   </a>
 </div>
