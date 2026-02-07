@@ -454,7 +454,7 @@ flowchart TD
 
 <div>
 
-### Specifications are the first layer
+### Specifications are the first layer that is
 
 - readable enough for non-engineers
 - technical enough to implement
