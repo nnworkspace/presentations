@@ -12,6 +12,7 @@
     "@slidev/cli": "^52.11.5",
     "@slidev/theme-default": "latest",
     "@slidev/theme-seriph": "latest",
+    "@vercel/analytics": "^1.6.1",
     "vue": "^3.5.27"
   },
   "slidev": {
