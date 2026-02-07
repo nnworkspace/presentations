@@ -59,11 +59,22 @@ The gap between:
 
 ### The Symptom: Documentation Theatre
 
-- **Rules** live in static Word documents or PDFs.
-- **Code** lives in dynamic Git.
+- **Policy** lives in OpenText servers
+- **Requirements** live in Jira tickets
+- **Architecture** lives in SharePoint documents
+- **Code** lives in Git repositories
+- **Tests** live somewhere else
 - **They drift apart.**
 
 </div>
+
+</div>
+
+<br>
+
+<div v-click>
+
+> Civilisations do not fail because they lack ambition. They fail when intent cannot survive the journey from vision to execution.
 
 </div>
 
@@ -84,14 +95,14 @@ A demonstrative workbench for **Institutional Governance Engineering**.
 
 ## Philosophy: Disciplined Momentum
 
-_A system that moves with confidence, because its constraints are visible, its intent explicit, and its decisions traceable._
+_A system that moves with confidence, because its constraints are visible, its intent explicit, and its decisions traceable in a logically unified environment._
 
 </div>
 
 <br>
 
 ### The "V-Model" Reimagined
-It is not about a slow waterfall process. It is about explicit **Layers of Intent** supercharged by modern automation.
+It is not about a slow waterfall process. It is about explicit **Layers of Intent** supercharged by Markdown, Git, and modern automation.
 
 ---
 
@@ -213,39 +224,51 @@ We use precise instruments to enforce the constitution.
 
 <div>
 
-<div class="governance-card">
+<a href="https://github.com/nnworkspace/elan/blob/main/00-project-governance/artefact-classification.md" target="_blank" class="block !text-current !no-underline hover:scale-[1.02] transition-transform duration-200">
+<div class="governance-card h-full">
   <h4><code>artefact-classification.md</code></h4>
   <p><b>Visibility & Handling</b>. Every file must declare its classification (public, restricted, confidential), owner, and audience in the front matter.</p>
 </div>
+</a>
 
-<div class="governance-card">
+<a href="https://github.com/nnworkspace/elan/blob/main/00-project-governance/logical-system-and-visibility.md" target="_blank" class="block !text-current !no-underline hover:scale-[1.02] transition-transform duration-200">
+<div class="governance-card h-full">
   <h4><code>logical-system-and-visibility.md</code></h4>
   <p><b>The Boundary</b>. Logical Unity vs. Physical Distribution. The system is one, even if repos are many.</p>
 </div>
+</a>
 
-<div class="governance-card">
+<a href="https://github.com/nnworkspace/elan/blob/main/00-project-governance/communication-and-project-management.md" target="_blank" class="block !text-current !no-underline hover:scale-[1.02] transition-transform duration-200">
+<div class="governance-card h-full">
   <h4><code>communication-and-project-management.md</code></h4>
   <p><b>The Dialogue</b>. "Communication is part of the system." Issues are records of reasoning, not just task trackers.</p>
 </div>
+</a>
 
 </div>
 
 <div>
 
-<div class="governance-card">
+<a href="https://github.com/nnworkspace/elan/blob/main/00-project-governance/branching-strategy.md" target="_blank" class="block !text-current !no-underline hover:scale-[1.02] transition-transform duration-200">
+<div class="governance-card h-full">
   <h4><code>branching-strategy.md</code></h4>
   <p><b>The Workflow</b>. Protected Main. Feature Branches. No Release Branches (Tags only).</p>
 </div>
+</a>
 
-<div class="governance-card">
+<a href="https://github.com/nnworkspace/elan/blob/main/00-project-governance/commit-message-conventions.md" target="_blank" class="block !text-current !no-underline hover:scale-[1.02] transition-transform duration-200">
+<div class="governance-card h-full">
   <h4><code>commit-message-conventions.md</code></h4>
   <p><b>The History</b>. Strict rules (Conventional Commits) to ensure the git log is an audit trail.</p>
 </div>
+</a>
 
-<div class="governance-card">
+<a href="https://github.com/nnworkspace/elan/blob/main/00-project-governance/linting-rules.md" target="_blank" class="block !text-current !no-underline hover:scale-[1.02] transition-transform duration-200">
+<div class="governance-card h-full">
   <h4><code>linting-rules.md</code></h4>
   <p><b>The Enforcer</b>. Automated rules (<code>LINT-C1</code>) that fail the build if governance is violated.</p>
 </div>
+</a>
 
 </div>
 
@@ -253,7 +276,50 @@ We use precise instruments to enforce the constitution.
 
 ---
 
-# 00-project-governance: Configuration Management
+# 00 Linting: The Automatic Enforcement of Governance
+
+> **Linting**: an automated check that scans files and **rejects changes** when they violate predefined rules.
+
+<div class="grid grid-cols-2 gap-10 mt-6">
+
+<div>
+
+**No meetings. No reminders. No interpretation.**
+
+Just: _Rule violated → change refused by Git._
+
+<br>
+
+### In most software projects
+Linting checks code style and syntax.<br> 
+Helpful, but not essential.
+
+</div>
+
+<div>
+
+### In Élan
+Linting checks **mandate compliance**:
+
+- Does this spec reference the Rulebook?
+- Does it match the Architecture version?
+- Are privacy rules violated in the code?
+- Do tests and code cite the correct specification?
+
+If yes: ❌ The build fails. The change cannot be merged.
+
+</div>
+
+</div>
+
+<br>
+
+> **The Git repository itself becomes the guardian of intent.**
+
+
+---
+
+# 00 Configuration Management
 
 How we maintain order over time.
 
@@ -365,28 +431,259 @@ Specifications are **anchored** to the architecture.
 
 ---
 
-# 40-specifications: The Pivot Point
-
-Specifications are the **load-bearing structure** of the project.
+# 40-specifications: The Load-Bearing Bridge
+Where intent stops being abstract, and starts being enforceable
 
 <div class="grid grid-cols-2 gap-10 mt-6">
 
 <div>
 
-### What they are NOT
-- Tickets (Jira, Issues)
-- Ephemera
-- "Nice to have"
+```mermaid {scale: 0.8}
+flowchart TD
+    A[10 Legal & Policy] --> B[20 Rulebook]
+    B --> C[30 Architecture]
+    C --> D[40 Specifications]
+    D --> E[50 Tests]
+    D --> F[60 Code]
+    D --> G[70 Reports]
+
+    style D fill:#FCD34D,stroke:#F59E0B,stroke-width:4px,rx:10,ry:10,color:#000
+```
 
 </div>
 
 <div>
 
-### What they ARE
-- **Stable**
-- **Versioned**
-- **Easily consumable by machine**
-- **Normative**
+### Specifications are the first layer
+
+- readable enough for non-engineers
+- technical enough to implement
+- structured enough to automate
+- precise enough to audit
+
+</div>
+
+</div>
+
+---
+
+# 40-specifications: The Authoritative Definition of the System
+
+<div class="grid grid-cols-2 gap-10 mt-6">
+
+<div>
+
+
+> Tickets describe tasks. Specifications define and drive the system.
+
+<div v-click>
+
+<br>
+
+<div class="text-xs -mt-2">
+
+| **Tickets / Issues** | **Specifications** |
+|---|---|
+| Conversational | Deliberate |
+| Fragmented | Holistic |
+| Optimised for throughput | Optimised for understanding |
+| Hard to audit later | Designed to be audited |
+| Disappear over time | Stable reference for years |
+
+</div>
+
+</div>
+
+<div v-click>
+
+In Élan:
+
+> Tickets may reference specs. Tickets must never replace specs.
+
+</div>
+
+</div>
+
+<div>
+
+<div v-click>
+
+### A Spec Set: defines a single feature or business process
+
+Example sets:
+- User Onboarding (`SPEC-SET-ONB`)
+- Liquidity Reservation (`SPEC-SET-LIQ`)
+
+Each set is versioned as **one atomic unit** via `manifest.yaml`.
+
+</div>
+
+</div>
+
+</div>
+
+---
+
+# 40 Inside a Spec Set: A Structured Semantic Unit
+
+<div class="grid grid-cols-2 gap-10 mt-6">
+
+<div>
+
+## Five views
+
+<br>
+<div class="text-xs -mt-2">
+
+| **View** | **Purpose** | **Nature** |
+| :--- | :--- | :--- |
+| **Overview (ROOT)** | Scope, traceability, document map | Governance view |
+| **Functional** | State machines & rules | Behaviour view |
+| **Data Model** | Entities & constraints | Schema view |
+| **Interfaces** | Flows & protocols | Interaction view |
+| **API** | openapi.yaml | Projection of Data + Interfaces |
+
+</div>
+
+This separation is not stylistic.
+It allows **different automation and linting** for each document.
+
+</div>
+
+
+<div>
+
+<div v-click>
+
+### A self-contained system of references
+
+```mermaid{scale: 0.6}
+flowchart TB
+
+    Overview@{ shape: doc, label:"SPEC-XX-ROOT<br/>Overview & Traceability"}
+
+    FUNC[[SPEC-XX-FUNC<br/>State Machines & Rules]]
+    DATA[(SPEC-XX-DATA<br/>Entities & Constraints)]
+    INT{{SPEC-XX-INT<br/>Flows & Protocols}}
+    API([openapi.yaml<br/>Executable Contract])
+
+    Overview -. "defines scope for" .-> FUNC
+    Overview -. "defines scope for" .-> DATA
+    Overview -. "defines scope for" .-> INT
+
+    FUNC -- "operates on" --> DATA
+    FUNC -- "is realised through" --> INT
+    DATA -- "is encoded in" --> API
+    INT -- "is implemented by" --> API
+```
+Nothing here stands alone. Each document is meaningful **only in relation to the others**.
+
+</div>
+
+</div>
+
+</div>
+
+---
+
+# 40 Governance Through References — The Golden Thread
+Élan governs the system **by reference, not by human memory**.
+
+<div class="grid grid-cols-2 gap-8 mt-4 text-sm">
+
+<div>
+
+**Each Specification Set declares:**
+
+- `@rule=SET-RULEBOOK:x.y.z`
+- `@arch=SET-ARCH:x.y.z`
+- Its own Global IDs
+- Its own version via `manifest.yaml`
+
+</div>
+
+<div>
+
+**This allows CI to detect automatically:**
+
+- Missing rule coverage
+- Architecture drift
+- Specification drift
+- Missing or outdated tests
+
+</div>
+
+</div>
+
+<div v-click>
+
+<br>
+
+### The result: an unbroken chain of custody from Law to Code
+
+<div class="grid grid-cols-[3fr_2fr] gap-4 items-center text-sm">
+
+<div>
+
+```mermaid {scale: 0.7}
+flowchart LR
+    RULE["Rule: LIQ-01<br>(Waterfall)"]:::legal
+    SPEC["Spec: TR-LIQ-04<br>(2PC Logic)"]:::spec
+    CODE["Code: WaterfallEngine<br>(Java)"]:::code
+    TEST["Test: TST-LIQ-001<br>(Happy Path)"]:::test
+
+    RULE -->|Mandates| SPEC
+    SPEC -->|Governs| CODE
+    TEST -->|Verifies| CODE
+    TEST -->|Validates| SPEC
+
+    classDef legal fill:#d946ef,stroke:#a21caf,color:white,rx:10,ry:10
+    classDef spec fill:#FCD34D,stroke:#F59E0B,stroke-width:4px,color:black,rx:10,ry:10
+    classDef code fill:#3b82f6,stroke:#1d4ed8,color:white,rx:10,ry:10
+    classDef test fill:#10b981,stroke:#047857,color:white,rx:10,ry:10
+```
+
+</div>
+
+<div class="text-sm">
+
+**Automation ensures:**
+- If Specs change → Tests must change.
+- If Tests change → Code must change.
+
+<br>
+
+> Systemic drift becomes mechanically detectable.
+
+</div>
+
+</div>
+
+</div>
+
+---
+
+# 40-specifications: Serves Two Kinds of Readers
+
+<div class="grid grid-cols-2 gap-10 mt-6">
+
+<div>
+
+### <span class="emoji-fix">🧑</span> Humans see:
+- Scope
+- Rules
+- Diagrams
+- Intent
+
+</div>
+
+<div>
+
+### <span class="emoji-fix">🤖</span> Machines see:
+- State transition tables
+- Data dictionaries with regex
+- Step-numbered sequence diagrams
+- Explicit Rule and Architecture references
 
 </div>
 
@@ -394,7 +691,102 @@ Specifications are the **load-bearing structure** of the project.
 
 <br>
 
-> Tickets coordinate work. Specifications define the system.
+> A human can understand the system.  
+> A machine can enforce the system.
+
+---
+
+# 40 One Spec Set → Three Forms of Evidence
+
+<div class="grid grid-cols-2 gap-10 mt-6 text-sm">
+
+<div>
+
+### For Testing
+
+Specs become **test generators**
+
+- State tables → transition tests
+- Interface steps → contract tests
+- Constraints → failure tests
+- Diagrams → mock behaviour
+
+<br>
+
+### For Code
+
+Specs become **implementation blueprints**
+
+- Data model → DB & API schemas
+- Functional rules → state machines
+- Interface contracts → API schemas and Protobufs
+- Privacy rules → linting logic
+
+</div>
+
+<div>
+
+### For Audit
+
+Specs create a **chain of custody**
+
+```mermaid
+flowchart LR
+    R[Rulebook Rule] --> S[Specification ID]
+    S --> T[Test Case]
+    S --> C[Code Module]
+```
+An auditor can walk:
+
+> Rule → Spec → Test → Code → Evidence
+
+No explanation required.
+
+
+</div>
+
+</div>
+
+---
+
+# 40-specifications — Where Governance Becomes Code
+
+These are not documents.<br>
+They are **machine-parsable representations of institutional invariants**.
+
+<div class="grid grid-cols-2 gap-10 mt-6">
+
+<div>
+
+### Examples (e.g. Digital Euro)
+
+- One person → one identity
+- One euro issued → one euro reserved
+- No PII leakage
+- No double spending
+
+The same specification structure can express any such invariant.
+
+</div>
+
+<div>
+
+### What this enables
+
+Systems where:
+
+- Engineers cannot accidentally violate policy
+- Privacy is enforced by schema, not guidelines
+- Monetary conservation is enforced by state machines
+- Tests, code, and audits share the same reference
+
+</div>
+
+</div>
+
+<br>
+
+> **Governance becomes code. Code becomes auditable governance.**
 
 ---
 
@@ -510,7 +902,7 @@ Not manually authored. **Generated from the Truth**.
 
 The **Constitutional Rails**.
 
-<div class="grid grid-cols-2 gap-8 mt-6">
+<div class="grid grid-cols-2 gap-8 mt-6 text-sm">
 
 <div>
 
@@ -519,9 +911,13 @@ The **Constitutional Rails**.
 - **Orchestration**: Ephemeral TestNets & Conformance.
 - **Reporting**: Chain of Custody & WORM Archiving.
 
+<br>
+
 ### 2. Analytical ("The Risk Engine")
 - **Spec Architect**: Parses Markdown into Semantic Graph.
 - **Change Impact Analyzer**: Calculates "Blast Radius".
+
+<br>
 
 ### 3. AI Oracle ("The Advisor")
 - **RAG-based**: Context-aware guidance.
