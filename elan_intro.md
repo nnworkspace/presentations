@@ -535,17 +535,47 @@ Each set is versioned as **one atomic unit** via `manifest.yaml`.
 <br>
 <div class="text-xs -mt-2">
 
-| **View** | **Purpose** | **Nature** |
-| :--- | :--- | :--- |
-| **Overview (ROOT)** | Scope, traceability, document map | Governance view |
-| **Functional** | State machines & rules | Behaviour view |
-| **Data Model** | Entities & constraints | Schema view |
-| **Interfaces** | Flows & protocols | Interaction view |
-| **API** | openapi.yaml | Projection of Data + Interfaces |
+<div class="grid grid-cols-[1.5fr_2fr_1.5fr] gap-2 font-bold border-b pb-2 mb-2">
+  <div>View</div>
+  <div>Purpose</div>
+  <div>Nature</div>
+</div>
+
+<a href="https://github.com/nnworkspace/elan/blob/main/40-specifications/liquidity-reservation/liquidity-reservation-spec-overview.md" target="_blank" class="grid grid-cols-[1.5fr_2fr_1.5fr] gap-2 border-b py-1 hover:bg-gray-100 dark:hover:bg-gray-800 rounded px-1 transition-colors !no-underline !text-current">
+  <div><strong>Overview (ROOT)</strong></div>
+  <div>Scope, traceability, document map</div>
+  <div>Governance view</div>
+</a>
+
+<a href="https://github.com/nnworkspace/elan/blob/main/40-specifications/liquidity-reservation/liquidity-reservation-functional-spec.md" target="_blank" class="grid grid-cols-[1.5fr_2fr_1.5fr] gap-2 border-b py-1 hover:bg-gray-100 dark:hover:bg-gray-800 rounded px-1 transition-colors !no-underline !text-current">
+  <div><strong>Functional</strong></div>
+  <div>State machines & rules</div>
+  <div>Behaviour view</div>
+</a>
+
+<a href="https://github.com/nnworkspace/elan/blob/main/40-specifications/liquidity-reservation/liquidity-reservation-data-model-spec.md" target="_blank" class="grid grid-cols-[1.5fr_2fr_1.5fr] gap-2 border-b py-1 hover:bg-gray-100 dark:hover:bg-gray-800 rounded px-1 transition-colors !no-underline !text-current">
+  <div><strong>Data Model</strong></div>
+  <div>Entities & constraints</div>
+  <div>Schema view</div>
+</a>
+
+<a href="https://github.com/nnworkspace/elan/blob/main/40-specifications/liquidity-reservation/liquidity-reservation-interfaces-spec.md" target="_blank" class="grid grid-cols-[1.5fr_2fr_1.5fr] gap-2 border-b py-1 hover:bg-gray-100 dark:hover:bg-gray-800 rounded px-1 transition-colors !no-underline !text-current">
+  <div><strong>Interfaces</strong></div>
+  <div>Flows & protocols</div>
+  <div>Interaction view</div>
+</a>
+
+<a href="https://github.com/nnworkspace/elan/blob/main/40-specifications/liquidity-reservation/openapi.yaml" target="_blank" class="grid grid-cols-[1.5fr_2fr_1.5fr] gap-2 py-1 hover:bg-gray-100 dark:hover:bg-gray-800 rounded px-1 transition-colors !no-underline !text-current">
+  <div><strong>API</strong></div>
+  <div>openapi.yaml</div>
+  <div>Projection of Data + Interfaces</div>
+</a>
+
+<br>
 
 </div>
 
-This separation is not stylistic.
+This separation is not stylistic.<br>
 It allows **different automation and linting** for each document.
 
 </div>
