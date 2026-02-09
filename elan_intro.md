@@ -659,7 +659,7 @@ Nothing here stands alone. Each document is meaningful **only in relation to the
 flowchart LR
     RULE["Rule: LIQ-01<br>(Waterfall)"]:::legal
     SPEC["Spec: TR-LIQ-04<br>(2PC Logic)"]:::spec
-    CODE["Code: WaterfallEngine<br>(Java)"]:::code
+    CODE["Code: LiquidityEngine<br>(Java)"]:::code
     TEST["Test: TST-LIQ-001<br>(Happy Path)"]:::test
 
     RULE -->|Mandates| SPEC
