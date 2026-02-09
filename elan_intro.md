@@ -467,6 +467,40 @@ flowchart TD
 
 ---
 
+# 40-specifications: Serves Two Kinds of Readers
+
+<div class="grid grid-cols-2 gap-10 mt-6">
+
+<div>
+
+### <span class="emoji-fix">🧑</span> Humans see:
+- Scope
+- Rules
+- Diagrams
+- Intent
+
+</div>
+
+<div>
+
+### <span class="emoji-fix">🤖</span> Machines see:
+- State transition tables
+- Data dictionaries with regex
+- Step-numbered sequence diagrams
+- Explicit Rule and Architecture references
+
+</div>
+
+</div>
+
+<br>
+
+> A human can understand the system.  
+> A machine can enforce the system.
+
+
+---
+
 # 40-specifications: The Authoritative Definition of the System
 
 <div class="grid grid-cols-2 gap-10 mt-6">
@@ -690,39 +724,6 @@ flowchart LR
 </div>
 
 </div>
-
----
-
-# 40-specifications: Serves Two Kinds of Readers
-
-<div class="grid grid-cols-2 gap-10 mt-6">
-
-<div>
-
-### <span class="emoji-fix">🧑</span> Humans see:
-- Scope
-- Rules
-- Diagrams
-- Intent
-
-</div>
-
-<div>
-
-### <span class="emoji-fix">🤖</span> Machines see:
-- State transition tables
-- Data dictionaries with regex
-- Step-numbered sequence diagrams
-- Explicit Rule and Architecture references
-
-</div>
-
-</div>
-
-<br>
-
-> A human can understand the system.  
-> A machine can enforce the system.
 
 ---
 
