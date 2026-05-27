@@ -112,15 +112,17 @@ A visual stacking of intent.
 
 <div class="grid grid-cols-2 gap-2 text-xs">
 
-<div>
+<div class="anatomy-table">
 
 | Layer | Name | Purpose |
 |---|---|---|
 | **00** | **Project Governance** | The "Constitution" |
 | **10** | **Legal Framework** | The Mandate |
+| **15** | **Requirements** | The Needs |
 | **20** | **Rulebook** | The Operational Logic |
-| **30** | **Architecture** | The Design & Boundaries |
-| **40** | **Specifications** | The Load-Bearing Structure |
+| **25** | **Business Architecture** | Interactions & Privacy |
+| **30** | **System Architecture** | The Components |
+| **40** | **Specifications** | Load-Bearing Structure |
 | **50** | **Tests** | **The Evidence** |
 | **60** | **Code** | The Implementation |
 | **70** | **Reports** | **The Confidence** |
@@ -128,22 +130,26 @@ A visual stacking of intent.
 
 </div>
 
-<div class="flex items-center justify-center">
+<div class="flex items-start justify-center -mt-22">
 
 ```mermaid {scale: 0.45}
 graph TD
-    R[20-Rulebook] --> |references| L[10-Legal]
-    A[30-Arch] --> |references| R[20-Rulebook]
-    S[40-Specs] --> |references| A[30-Arch]
-    T[50-Tests] --> |references| S[40-Specs]
-    C[60-Code] --> |references| T[50-Tests]
+    Req[15-Requirements] --> |references| L[10-Legal]
+    R[20-Rulebook] --> |references| Req
+    BA[25-Business Arch] --> |references| R
+    SA[30-System Arch] --> |references| BA
+    S[40-Specs] --> |references| SA
+    T[50-Tests] --> |references| S
+    C[60-Code] --> |references| T
     
-    auth[80-Automation] -.->|Enforces<br>governance| L
-    auth -.->|Enforces<br>governance| R
-    auth -.->|Enforces<br>governance| A
-    auth -.->|Enforces<br>governance| S
-    auth -.->|Enforces<br>governance| T
-    auth -.->|Enforces<br>governance| C
+    auth[80-Automation] -.->|Enforces| L
+    auth -.->|Enforces| Req
+    auth -.->|Enforces| R
+    auth -.->|Enforces| BA
+    auth -.->|Enforces| SA
+    auth -.->|Enforces| S
+    auth -.->|Enforces| T
+    auth -.->|Enforces| C
     auth -.->|Generates| Rep[70-Reports]
     
 ```
@@ -151,6 +157,15 @@ graph TD
 </div>
 
 </div>
+
+<style>
+.anatomy-table table { font-size: 0.8rem; }
+.anatomy-table td, .anatomy-table th {
+  padding-top: 0.5rem !important;
+  padding-bottom: 0.5rem !important;
+  line-height: 1.2 !important;
+}
+</style>
 
 ---
 
@@ -193,11 +208,13 @@ Establishes the **Fundamental Constraints**:
 <div v-click>
 <div class="flex justify-center mt-4">
 
-```mermaid {scale: 0.6}
+```mermaid {scale: 0.45}
 graph LR
-    Rule(20-rule) --> |traces| Law(10-legal-framework)
-    Arch(30-architecture) --> |traces| Rule
-    Spec(40-specifications) --> |traces| Arch
+    Req(15-requirements) --> |traces| Law(10-legal)
+    Rule(20-rulebook) --> |traces| Req
+    BArch(25-business-arch) --> |traces| Rule
+    SArch(30-system-arch) --> |traces| BArch
+    Spec(40-specifications) --> |traces| SArch
     Test(50-tests) --> |traces| Spec
     Impl(60-code) --> |traces| Test
     
@@ -355,33 +372,102 @@ If code targets `v1.2.0` but the spec is `v1.3.0`, the build fails.
 
 ---
 
-# 10-Legal & 20-Rulebook: The Policy Foundation
+# 10-legal-framework: The Mandate
 
-The inputs to the system.
+Policy is not background context; it is **foundational input**.
 
 <div class="grid grid-cols-2 gap-10 mt-6">
 
 <div>
 
-### 10-Legal Framework
-**The Mandate**.
-Policy is not background context; it is **foundational input**.
+### Purpose
+Preserve legislative intent so it survives the journey to code.
 
-- **Purpose**: Preserves legislative intent.
 - **Content**: Treaties, Regulations, Acts.
 - **Role**: Defines **Rights**.
+- **Form**: The external authority every layer below must trace to.
 
 </div>
 
 <div>
 
-### 20-Rulebook
-**The Operational Logic**.
+### Why it leads
+Every rule, specification, and line of code ultimately answers to a mandate here. Nothing downstream may invent authority the law did not grant.
+
+</div>
+
+</div>
+
+<br>
+
+> The mandate is the root of the chain of custody.
+
+---
+
+# 15-requirements: Where the Rules Come From
+
+Between the mandate and the rulebook: the **needs**.
+
+<div class="grid grid-cols-2 gap-10 mt-6">
+
+<div>
+
+### Purpose
+Capture intent in the language of people, before it becomes operational logic.
+
+- **User journeys**: how real actors experience the system.
+- **Functional requirements**: what must be possible (the URD).
+- **End-to-end flows**: the paths that cross many rules.
+
+</div>
+
+<div>
+
+### Two flows, never conflated
+
+- **Down (derivation):** traceability flows Rulebook to Architecture to Specs.
+- **Up (origination):** requirements *feed* the Rulebook. The needs come first.
+
+`REQ-ONB-*` and `REQ-LIQ-*` trace down into the rules they justify.
+
+</div>
+
+</div>
+
+<br>
+
+> The needs come first. Everything downstream exists to satisfy them.
+
+<!--
+Presenter Notes:
+- Layer 15 sits between Legal (10) and Rulebook (20).
+- Two flows: requirements originate upward; traceability derives downward.
+- Naming discipline (PDR-0003): "functional" is overloaded, so the layer is "Requirements", never "Functional Design".
+-->
+
+---
+
+# 20-rulebook: The Operational Logic
+
 The bridge between Law and Tech.
 
-- **Purpose**: Translates "Mandates" into "Rules".
-- **Content**: Domain Logic (e.g. Payments, Medical).
+<div class="grid grid-cols-2 gap-10 mt-6">
+
+<div>
+
+### Purpose
+Translate mandates and needs into **operational rules**.
+
+- **Content**: Domain logic (e.g. Payments, Medical).
 - **Role**: Defines **Obligations**.
+- **Upstream**: Gives effect to `15-requirements`, under the authority of `10-legal-framework`.
+
+</div>
+
+<div>
+
+### The pivot point
+Rules are the first artefacts precise enough to be cited downstream. Architecture, specifications, tests, and code all anchor to a rule via `@rule=SET-RULEBOOK`.
 
 </div>
 
@@ -393,29 +479,61 @@ The bridge between Law and Tech.
 
 ---
 
-# 30-architecture: The Blueprint
+# 25-business-architecture: Who Interacts, Who Sees What
 
-Architecture acts as both **Reference** and **Constraint**.
+The institution's design intent, kept **above implementation**.
 
 <div class="grid grid-cols-2 gap-10 mt-6">
 
 <div>
 
-### Three Primary Views
+### Two Views
 
 - **System Context**  
-  High-level ecosystem view.
-- **Component Inventory**  
-  Logical blocks & services.
+  How actors relate: Eurosystem, PSPs, Users. Who is responsible for what.
 - **Security & Privacy Zones**  
-  Data boundaries & trust.
+  Trust boundaries and data visibility: the privacy firewall.
+
+</div>
+
+<div>
+
+### The Altitude
+This layer says *what must be true and who may know what*, not *which components are built*.
+
+`@rule=SET-RULEBOOK:0.9.0`: every choice satisfies a rule.
+
+</div>
+
+</div>
+
+<br>
+
+> In real programmes the owner boundary often falls here: the institution owns the business architecture; a vendor builds what realises it.
+
+---
+
+# 30-system-architecture: The Components
+
+The realisation: **which components are built** to make the design real.
+
+<div class="grid grid-cols-2 gap-10 mt-6">
+
+<div>
+
+### Component Inventory
+The logical blocks and services.
+
+- **Settlement Engine**, **Alias Service**
+- **DESP**, **Access Gateway**
+- **Liquidity Engine**, **KMS**
 
 </div>
 
 <div>
 
 ### Traceability Bridge
-Specifications are **anchored** to the architecture.
+Specifications are **anchored** to the system architecture.
 
 `Upstream Arch: @arch=SET-ARCH:0.1.0`
 
@@ -438,10 +556,12 @@ Where intent stops being abstract, and starts being enforceable
 
 <div>
 
-```mermaid {scale: 0.8}
+```mermaid {scale: 0.6}
 flowchart TD
-    A[10 Legal & Policy] --> B[20 Rulebook]
-    B --> C[30 Architecture]
+    A[10 Legal & Policy] --> Req[15 Requirements]
+    Req --> B[20 Rulebook]
+    B --> BA[25 Business Architecture]
+    BA --> C[30 System Architecture]
     C --> D[40 Specifications]
     D --> E[50 Tests]
     D --> F[60 Code]
@@ -581,10 +701,10 @@ Each set is versioned as **one atomic unit** via `manifest.yaml`.
   <div>Governance view</div>
 </a>
 
-<a href="https://github.com/nnworkspace/elan/blob/main/40-specifications/liquidity-reservation/liquidity-reservation-functional-spec.md" target="_blank" class="grid grid-cols-[1.5fr_2fr_1.5fr] gap-2 border-b py-1 hover:bg-gray-100 dark:hover:bg-gray-800 rounded px-1 transition-colors !no-underline !text-current">
-  <div><strong>Functional</strong></div>
+<a href="https://github.com/nnworkspace/elan/blob/main/40-specifications/liquidity-reservation/liquidity-reservation-behaviour-spec.md" target="_blank" class="grid grid-cols-[1.5fr_2fr_1.5fr] gap-2 border-b py-1 hover:bg-gray-100 dark:hover:bg-gray-800 rounded px-1 transition-colors !no-underline !text-current">
+  <div><strong>Behaviour</strong></div>
   <div>State machines & rules</div>
-  <div>Behaviour view</div>
+  <div>Logic view</div>
 </a>
 
 <a href="https://github.com/nnworkspace/elan/blob/main/40-specifications/liquidity-reservation/liquidity-reservation-data-model-spec.md" target="_blank" class="grid grid-cols-[1.5fr_2fr_1.5fr] gap-2 border-b py-1 hover:bg-gray-100 dark:hover:bg-gray-800 rounded px-1 transition-colors !no-underline !text-current">
@@ -650,7 +770,7 @@ Nothing here stands alone. Each document is meaningful **only in relation to the
 
 ---
 
-# 40 Governance Through References — The Golden Thread
+# 40 Governance Through References: The Golden Thread
 Élan governs the system **by reference, not by human memory**.
 
 <div class="grid grid-cols-2 gap-8 mt-4 text-sm">
@@ -780,7 +900,7 @@ No explanation required.
 
 ---
 
-# 40-specifications — Where Governance Becomes Code
+# 40-specifications: Where Governance Becomes Code
 
 These are not documents.<br>
 They are **machine-parsable representations of institutional invariants**.
@@ -1008,7 +1128,7 @@ Governance is not external. It is **integral part of the living system** (folder
 <div class="summary-card execution">
 
 ### 2. The Execution
-A unified environment for diverse builders (folder 30-60).<br>
+A unified environment for diverse builders (folders 25-60).<br>
 *Trace or Fail.*
 
 </div>
