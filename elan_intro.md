@@ -118,15 +118,15 @@ A visual stacking of intent.
 |---|---|---|
 | **00** | **Project Governance** | The "Constitution" |
 | **10** | **Legal Framework** | The Mandate |
-| **15** | **Requirements** | The Needs |
-| **20** | **Rulebook** | The Operational Logic |
-| **25** | **Business Architecture** | Interactions & Privacy |
-| **30** | **System Architecture** | The Components |
-| **40** | **Specifications** | Load-Bearing Structure |
-| **50** | **Tests** | **The Evidence** |
-| **60** | **Code** | The Implementation |
-| **70** | **Reports** | **The Confidence** |
-| **80** | **Automation** | The "Police" |
+| **20** | **Requirements** | The Needs |
+| **30** | **Rulebook** | The Operational Logic |
+| **40** | **Business Architecture** | Interactions & Privacy |
+| **50** | **System Architecture** | The Components |
+| **60** | **Specifications** | Load-Bearing Structure |
+| **70** | **Tests** | **The Evidence** |
+| **80** | **Code** | The Implementation |
+| **90** | **Reports** | **The Confidence** |
+| **100** | **Automation** | The "Police" |
 
 </div>
 
@@ -134,15 +134,15 @@ A visual stacking of intent.
 
 ```mermaid {scale: 0.45}
 graph TD
-    Req[15-Requirements] --> |references| L[10-Legal]
-    R[20-Rulebook] --> |references| Req
-    BA[25-Business Arch] --> |references| R
-    SA[30-System Arch] --> |references| BA
-    S[40-Specs] --> |references| SA
-    T[50-Tests] --> |references| S
-    C[60-Code] --> |references| T
+    Req[20-Requirements] --> |references| L[10-Legal]
+    R[30-Rulebook] --> |references| Req
+    BA[40-Business Arch] --> |references| R
+    SA[50-System Arch] --> |references| BA
+    S[60-Specs] --> |references| SA
+    T[70-Tests] --> |references| S
+    C[80-Code] --> |references| T
     
-    auth[80-Automation] -.->|Enforces| L
+    auth[100-Automation] -.->|Enforces| L
     auth -.->|Enforces| Req
     auth -.->|Enforces| R
     auth -.->|Enforces| BA
@@ -150,7 +150,7 @@ graph TD
     auth -.->|Enforces| S
     auth -.->|Enforces| T
     auth -.->|Enforces| C
-    auth -.->|Generates| Rep[70-Reports]
+    auth -.->|Generates| Rep[90-Reports]
     
 ```
 
@@ -210,13 +210,13 @@ Establishes the **Fundamental Constraints**:
 
 ```mermaid {scale: 0.45}
 graph LR
-    Req(15-requirements) --> |traces| Law(10-legal)
-    Rule(20-rulebook) --> |traces| Req
-    BArch(25-business-arch) --> |traces| Rule
-    SArch(30-system-arch) --> |traces| BArch
-    Spec(40-specifications) --> |traces| SArch
-    Test(50-tests) --> |traces| Spec
-    Impl(60-code) --> |traces| Test
+    Req(20-requirements) --> |traces| Law(10-legal)
+    Rule(30-rulebook) --> |traces| Req
+    BArch(40-business-arch) --> |traces| Rule
+    SArch(50-system-arch) --> |traces| BArch
+    Spec(60-specifications) --> |traces| SArch
+    Test(70-tests) --> |traces| Spec
+    Impl(80-code) --> |traces| Test
     
     style Law fill:#f9f,stroke:#333,stroke-width:2px
     style Impl fill:#bbf,stroke:#333,stroke-width:2px
@@ -404,7 +404,7 @@ Every rule, specification, and line of code ultimately answers to a mandate here
 
 ---
 
-# 15-requirements: Where the Rules Come From
+# 20-requirements: Where the Rules Come From
 
 Between the mandate and the rulebook: the **needs**.
 
@@ -440,14 +440,14 @@ Capture intent in the language of people, before it becomes operational logic.
 
 <!--
 Presenter Notes:
-- Layer 15 sits between Legal (10) and Rulebook (20).
+- Layer 20 sits between Legal (10) and Rulebook (30).
 - Two flows: requirements originate upward; traceability derives downward.
 - Naming discipline (PDR-0003): "functional" is overloaded, so the layer is "Requirements", never "Functional Design".
 -->
 
 ---
 
-# 20-rulebook: The Operational Logic
+# 30-rulebook: The Operational Logic
 
 The bridge between Law and Tech.
 
@@ -460,7 +460,7 @@ Translate mandates and needs into **operational rules**.
 
 - **Content**: Domain logic (e.g. Payments, Medical).
 - **Role**: Defines **Obligations**.
-- **Upstream**: Gives effect to `15-requirements`, under the authority of `10-legal-framework`.
+- **Upstream**: Gives effect to `20-requirements`, under the authority of `10-legal-framework`.
 
 </div>
 
@@ -479,7 +479,7 @@ Rules are the first artefacts precise enough to be cited downstream. Architectur
 
 ---
 
-# 25-business-architecture: Who Interacts, Who Sees What
+# 40-business-architecture: Who Interacts, Who Sees What
 
 The institution's design intent, kept **above implementation**.
 
@@ -513,7 +513,7 @@ This layer says *what must be true and who may know what*, not *which components
 
 ---
 
-# 30-system-architecture: The Components
+# 50-system-architecture: The Components
 
 The realisation: **which components are built** to make the design real.
 
@@ -549,7 +549,7 @@ Specifications are **anchored** to the system architecture.
 
 ---
 
-# 40-specifications: The Load-Bearing Bridge
+# 60-specifications: The Load-Bearing Bridge
 Where intent stops being abstract, and starts being enforceable
 
 <div class="grid grid-cols-2 gap-10 mt-6">
@@ -558,14 +558,14 @@ Where intent stops being abstract, and starts being enforceable
 
 ```mermaid {scale: 0.6}
 flowchart TD
-    A[10 Legal & Policy] --> Req[15 Requirements]
-    Req --> B[20 Rulebook]
-    B --> BA[25 Business Architecture]
-    BA --> C[30 System Architecture]
-    C --> D[40 Specifications]
-    D --> E[50 Tests]
-    D --> F[60 Code]
-    D --> G[70 Reports]
+    A[10 Legal & Policy] --> Req[20 Requirements]
+    Req --> B[30 Rulebook]
+    B --> BA[40 Business Architecture]
+    BA --> C[50 System Architecture]
+    C --> D[60 Specifications]
+    D --> E[70 Tests]
+    D --> F[80 Code]
+    D --> G[90 Reports]
 
     style D fill:#FCD34D,stroke:#F59E0B,stroke-width:4px,rx:10,ry:10,color:#000
 ```
@@ -587,7 +587,7 @@ flowchart TD
 
 ---
 
-# 40-specifications: Serves Two Kinds of Readers
+# 60-specifications: Serves Two Kinds of Readers
 
 <div class="grid grid-cols-2 gap-10 mt-6">
 
@@ -621,7 +621,7 @@ flowchart TD
 
 ---
 
-# 40-specifications: The Authoritative Definition of the System
+# 60-specifications: The Authoritative Definition of the System
 
 <div class="grid grid-cols-2 gap-10 mt-6">
 
@@ -678,7 +678,7 @@ Each set is versioned as **one atomic unit** via `manifest.yaml`.
 
 ---
 
-# 40 Inside a Spec Set: A Structured Semantic Unit
+# 60 Inside a Spec Set: A Structured Semantic Unit
 
 <div class="grid grid-cols-2 gap-10 mt-6">
 
@@ -695,31 +695,31 @@ Each set is versioned as **one atomic unit** via `manifest.yaml`.
   <div>Nature</div>
 </div>
 
-<a href="https://github.com/nnworkspace/elan/blob/main/40-specifications/liquidity-reservation/liquidity-reservation-spec-overview.md" target="_blank" class="grid grid-cols-[1.5fr_2fr_1.5fr] gap-2 border-b py-1 hover:bg-gray-100 dark:hover:bg-gray-800 rounded px-1 transition-colors !no-underline !text-current">
+<a href="https://github.com/nnworkspace/elan/blob/main/60-specifications/liquidity-reservation/liquidity-reservation-spec-overview.md" target="_blank" class="grid grid-cols-[1.5fr_2fr_1.5fr] gap-2 border-b py-1 hover:bg-gray-100 dark:hover:bg-gray-800 rounded px-1 transition-colors !no-underline !text-current">
   <div><strong>Overview (ROOT)</strong></div>
   <div>Scope, traceability, document map</div>
   <div>Governance view</div>
 </a>
 
-<a href="https://github.com/nnworkspace/elan/blob/main/40-specifications/liquidity-reservation/liquidity-reservation-behaviour-spec.md" target="_blank" class="grid grid-cols-[1.5fr_2fr_1.5fr] gap-2 border-b py-1 hover:bg-gray-100 dark:hover:bg-gray-800 rounded px-1 transition-colors !no-underline !text-current">
+<a href="https://github.com/nnworkspace/elan/blob/main/60-specifications/liquidity-reservation/liquidity-reservation-behaviour-spec.md" target="_blank" class="grid grid-cols-[1.5fr_2fr_1.5fr] gap-2 border-b py-1 hover:bg-gray-100 dark:hover:bg-gray-800 rounded px-1 transition-colors !no-underline !text-current">
   <div><strong>Behaviour</strong></div>
   <div>State machines & rules</div>
   <div>Logic view</div>
 </a>
 
-<a href="https://github.com/nnworkspace/elan/blob/main/40-specifications/liquidity-reservation/liquidity-reservation-data-model-spec.md" target="_blank" class="grid grid-cols-[1.5fr_2fr_1.5fr] gap-2 border-b py-1 hover:bg-gray-100 dark:hover:bg-gray-800 rounded px-1 transition-colors !no-underline !text-current">
+<a href="https://github.com/nnworkspace/elan/blob/main/60-specifications/liquidity-reservation/liquidity-reservation-data-model-spec.md" target="_blank" class="grid grid-cols-[1.5fr_2fr_1.5fr] gap-2 border-b py-1 hover:bg-gray-100 dark:hover:bg-gray-800 rounded px-1 transition-colors !no-underline !text-current">
   <div><strong>Data Model</strong></div>
   <div>Entities & constraints</div>
   <div>Schema view</div>
 </a>
 
-<a href="https://github.com/nnworkspace/elan/blob/main/40-specifications/liquidity-reservation/liquidity-reservation-interfaces-spec.md" target="_blank" class="grid grid-cols-[1.5fr_2fr_1.5fr] gap-2 border-b py-1 hover:bg-gray-100 dark:hover:bg-gray-800 rounded px-1 transition-colors !no-underline !text-current">
+<a href="https://github.com/nnworkspace/elan/blob/main/60-specifications/liquidity-reservation/liquidity-reservation-interfaces-spec.md" target="_blank" class="grid grid-cols-[1.5fr_2fr_1.5fr] gap-2 border-b py-1 hover:bg-gray-100 dark:hover:bg-gray-800 rounded px-1 transition-colors !no-underline !text-current">
   <div><strong>Interfaces</strong></div>
   <div>Flows & protocols</div>
   <div>Interaction view</div>
 </a>
 
-<a href="https://github.com/nnworkspace/elan/blob/main/40-specifications/liquidity-reservation/openapi.yaml" target="_blank" class="grid grid-cols-[1.5fr_2fr_1.5fr] gap-2 py-1 hover:bg-gray-100 dark:hover:bg-gray-800 rounded px-1 transition-colors !no-underline !text-current">
+<a href="https://github.com/nnworkspace/elan/blob/main/60-specifications/liquidity-reservation/openapi.yaml" target="_blank" class="grid grid-cols-[1.5fr_2fr_1.5fr] gap-2 py-1 hover:bg-gray-100 dark:hover:bg-gray-800 rounded px-1 transition-colors !no-underline !text-current">
   <div><strong>API</strong></div>
   <div>openapi.yaml</div>
   <div>Projection of Data + Interfaces</div>
@@ -770,7 +770,7 @@ Nothing here stands alone. Each document is meaningful **only in relation to the
 
 ---
 
-# 40 Governance Through References: The Golden Thread
+# 60 Governance Through References: The Golden Thread
 Élan governs the system **by reference, not by human memory**.
 
 <div class="grid grid-cols-2 gap-8 mt-4 text-sm">
@@ -847,7 +847,7 @@ flowchart LR
 
 ---
 
-# 40 One Spec Set → Three Forms of Evidence
+# 60 One Spec Set → Three Forms of Evidence
 
 <div class="grid grid-cols-2 gap-10 mt-6 text-sm">
 
@@ -900,7 +900,7 @@ No explanation required.
 
 ---
 
-# 40-specifications: Where Governance Becomes Code
+# 60-specifications: Where Governance Becomes Code
 
 These are not documents.<br>
 They are **machine-parsable representations of institutional invariants**.
@@ -941,7 +941,7 @@ Systems where:
 
 ---
 
-# 50-tests: The Evidence
+# 70-tests: The Evidence
 
 Not just "testing". **System-Level Assurance**.
 
@@ -973,11 +973,11 @@ Structured evidence, not random scripts.
 
 <br>
 
-> Unit tests belong in the code (60). **System Assurance** belongs here (50).
+> Unit tests belong in the code (80). **System Assurance** belongs here (70).
 
 ---
 
-# 60-code: The Workbench
+# 80-code: The Workbench
 
 Implementation is distributed, but governance is unified.
 
@@ -1013,7 +1013,7 @@ Shared libraries that enforce the references to upstream specs and other rules.
 
 ---
 
-# 70-reports: Derived Evidence
+# 90-reports: Derived Evidence
 
 Not manually authored. **Generated from the Truth**.
 
@@ -1049,7 +1049,7 @@ Not manually authored. **Generated from the Truth**.
 
 ---
 
-# 80-automation: Active Governance Engine
+# 100-automation: Active Governance Engine
 
 The **Constitutional Rails**.
 
@@ -1086,7 +1086,7 @@ The **Constitutional Rails**.
 sequenceDiagram
     actor Contributor
     participant Git as Workbench
-    participant CI as 80-Automation
+    participant CI as 100-Automation
     
     Contributor->>Git: Commit
     Git->>CI: Pipeline
@@ -1120,7 +1120,7 @@ class: text-center
 <div class="summary-card constitution">
 
 ### 1. The Constitution
-Governance is not external. It is **integral part of the living system** (folder 00-20).<br>
+Governance is not external. It is **integral part of the living system** (folders 00-30).<br>
 *Policy intent is the first dependency.*
 
 </div>
@@ -1128,7 +1128,7 @@ Governance is not external. It is **integral part of the living system** (folder
 <div class="summary-card execution">
 
 ### 2. The Execution
-A unified environment for diverse builders (folders 25-60).<br>
+A unified environment for diverse builders (folders 40-80).<br>
 *Trace or Fail.*
 
 </div>
@@ -1136,7 +1136,7 @@ A unified environment for diverse builders (folders 25-60).<br>
 <div class="summary-card automation">
 
 ### 3. The Automation
-Active constraints that prevent drift (folder 80).<br>
+Active constraints that prevent drift (folder 100).<br>
 *Integrity with lightning speed.*
 
 </div>
