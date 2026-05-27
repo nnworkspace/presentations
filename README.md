@@ -4,7 +4,7 @@
 To start the slide show:
 
 - `pnpm install`
-- `pnpm dev`
+- `pnpm slidev <slides_file_name>.md`
 - visit <http://localhost:3030>
 
 or 
@@ -44,7 +44,7 @@ presentations/
 ├── ....
 ``` 
 - `public`: Contains static files for the presentations, usually images.
-- `slides`: Contains all my presentation Markdown files.
+- `*.md`: Each presentation is a Markdown file at the repository root.
 - `styles`: For my global, shared styles.
 - `package.json`: build spec.
 - `vercel.json`: build and deploy spec for Vercel.
