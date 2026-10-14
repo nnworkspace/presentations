@@ -981,6 +981,9 @@ One trade, end to end
 <!--
 - €STR is the euro short-term rate published by the ECB. The 2021 Definitions name it as a Floating Rate Option: EUR-EuroSTR-OIS Compound.
 - Annual payments on both legs, Actual/360, is the usual convention for a euro overnight index swap.
+- If asked why receiving fixed protects the fund: pension promises are valued at today's interest rates (present value). EUR 1 million due in 20 years is worth about EUR 673,000 today at 2%, but only about EUR 554,000 at 3%. When rates fall, the liabilities grow and the receive-fixed swap gains; when rates rise, the liabilities shrink and the swap loses. The two roughly offset, so the funding ratio stays steady.
+- The catch is cash: the swap's loss must be covered with collateral the same day, while the liability gain is only on paper. That gap caught UK pension funds in September 2022.
+- Real pension hedges run 20 to 50 years; five years keeps the example simple.
 -->
 
 ---
