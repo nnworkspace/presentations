@@ -3,7 +3,7 @@ theme: seriph
 layout: image-right
 image: /isda_contract_as_data/isda-document-stack.jpg
 backgroundSize: contain
-title: The Contract as Data
+title: "The Contract as Data: How ISDA Rebuilt a Market's Paperwork"
 info: |
     ## The Contract as Data
     How ISDA rebuilt a market's paperwork, and what a new payment scheme can learn from it.
