@@ -342,7 +342,7 @@ After 2008, every regime wrote reporting rules in prose, and every bank translat
 
 </div>
 
-<div class="mt-6 text-xs opacity-60">The model code for each example is in the appendix.</div>
+<div class="mt-6 text-xs opacity-60">The model code for each example is in Appendix A.</div>
 
 <!--
 - The Common Domain Model is not the Master Agreement translated into code. It answers more basic questions afresh, and these four show how.
@@ -680,7 +680,7 @@ layout: center
 class: text-center
 ---
 
-# Appendix
+# Appendix A
 
 The four model examples, as code
 
@@ -860,3 +860,520 @@ The Protocol changed the words of the contract. The index transition changes the
 </div>
 
 </div>
+
+---
+layout: center
+class: text-center
+---
+
+# Appendix B
+
+One trade, end to end
+
+<div class="mt-4 text-sm opacity-70">A fictional swap, followed through every layer of the document library</div>
+
+---
+
+# One trade, seven layers
+
+<div class="text-sm opacity-70 -mt-2">Bank A and Pension Fund B agree a five-year euro interest rate swap</div>
+
+<div class="grid grid-cols-7 gap-2 mt-8">
+
+<div class="rounded-lg border border-slate-200 bg-white/70 px-2 py-3 text-center shadow-sm">
+  <carbon-document-signed class="text-teal-600 text-2xl mx-auto" />
+  <div class="text-sm mt-2 leading-tight text-slate-800" style="font-family: adobe-garamond-pro, serif">2002 Master Agreement</div>
+  <div class="text-[10px] mt-1 opacity-70 leading-tight">Signed 2019, printed form</div>
+</div>
+<div class="rounded-lg border border-slate-200 bg-white/70 px-2 py-3 text-center shadow-sm">
+  <carbon-policy class="text-teal-600 text-2xl mx-auto" />
+  <div class="text-sm mt-2 leading-tight text-slate-800" style="font-family: adobe-garamond-pro, serif">Schedule</div>
+  <div class="text-[10px] mt-1 opacity-70 leading-tight">Their elections</div>
+</div>
+<div class="rounded-lg border border-slate-200 bg-white/70 px-2 py-3 text-center shadow-sm">
+  <carbon-money class="text-teal-600 text-2xl mx-auto" />
+  <div class="text-sm mt-2 leading-tight text-slate-800" style="font-family: adobe-garamond-pro, serif">VM Credit Support Annex</div>
+  <div class="text-[10px] mt-1 opacity-70 leading-tight">Collateral terms</div>
+</div>
+<div class="rounded-lg border border-slate-200 bg-white/70 px-2 py-3 text-center shadow-sm">
+  <carbon-book class="text-teal-600 text-2xl mx-auto" />
+  <div class="text-sm mt-2 leading-tight text-slate-800" style="font-family: adobe-garamond-pro, serif">2021 Definitions</div>
+  <div class="text-[10px] mt-1 opacity-70 leading-tight">Shared vocabulary, versioned</div>
+</div>
+<div class="rounded-lg border border-slate-200 bg-white/70 px-2 py-3 text-center shadow-sm">
+  <carbon-email class="text-teal-600 text-2xl mx-auto" />
+  <div class="text-sm mt-2 leading-tight text-slate-800" style="font-family: adobe-garamond-pro, serif">Confirmation</div>
+  <div class="text-[10px] mt-1 opacity-70 leading-tight">This one trade</div>
+</div>
+<div class="rounded-lg border border-slate-200 bg-white/70 px-2 py-3 text-center shadow-sm">
+  <carbon-data-structured class="text-teal-600 text-2xl mx-auto" />
+  <div class="text-sm mt-2 leading-tight text-slate-800" style="font-family: adobe-garamond-pro, serif">CDM record</div>
+  <div class="text-[10px] mt-1 opacity-70 leading-tight">The trade as data</div>
+</div>
+<div class="rounded-lg border border-slate-200 bg-white/70 px-2 py-3 text-center shadow-sm">
+  <carbon-report class="text-teal-600 text-2xl mx-auto" />
+  <div class="text-sm mt-2 leading-tight text-slate-800" style="font-family: adobe-garamond-pro, serif">Regulatory report</div>
+  <div class="text-[10px] mt-1 opacity-70 leading-tight">Generated from the record</div>
+</div>
+
+</div>
+
+<div class="grid grid-cols-7 gap-2 mt-2 text-[10px] text-center uppercase tracking-widest">
+  <div class="col-span-5 border-t-2 border-slate-300 pt-2 text-slate-500">Legal documents: the text that binds</div>
+  <div class="col-span-2 border-t-2 border-teal-600 pt-2 text-teal-700">Data: derived from the text</div>
+</div>
+
+<div class="mt-8 grid grid-cols-3 gap-5 text-sm">
+  <div class="flex gap-3"><carbon-calendar class="text-teal-600 text-xl shrink-0" /><div><b>Signed once:</b> Master Agreement, Schedule and CSA, years before the trade.</div></div>
+  <div class="flex gap-3"><carbon-book class="text-teal-600 text-xl shrink-0" /><div><b>Referenced:</b> the Definitions are never signed, only named, with a version.</div></div>
+  <div class="flex gap-3"><carbon-email class="text-teal-600 text-xl shrink-0" /><div><b>Per trade:</b> only the Confirmation is new, and it is short.</div></div>
+</div>
+
+<div class="abs-bl ml-14 mb-3 text-[10px] opacity-50">Illustrative. Fictional parties and figures; document wording paraphrased, not ISDA text.</div>
+
+<!--
+- The parties, dates and figures on the next slides are invented. The structure follows the 2002 ISDA Master Agreement, the 2016 VM Credit Support Annex (English law) and the 2021 ISDA Interest Rate Derivatives Definitions.
+- The document wording is paraphrased. ISDA's forms are copyrighted and available from ISDA.
+- Read the chain left to right: each document points at the ones before it.
+-->
+
+---
+
+# The trade in one sentence
+
+<div class="text-sm opacity-70 -mt-2">What the two parties agree on the phone, or on a trading platform</div>
+
+<div class="grid grid-cols-[3fr_2fr] gap-8 mt-5 items-start">
+
+<div>
+
+<div class="rounded-xl border-l-8 border-teal-600 bg-teal-50 dark:bg-teal-900/20 px-6 py-5 shadow-sm">
+  <div class="text-xs uppercase tracking-widest text-teal-700 font-semibold">2026-10-15, 10:42 CET</div>
+  <div class="text-2xl mt-2 leading-snug text-slate-800" style="font-family: adobe-garamond-pro, serif">Bank A pays a fixed 2.10% a year on EUR 50 million to Pension Fund B for five years. Fund B pays €STR, compounded daily, on the same amount.</div>
+</div>
+
+<div class="grid grid-cols-2 gap-4 mt-5 text-sm">
+  <div class="rounded-lg border border-slate-200 bg-white/70 p-3 flex gap-3"><carbon-building class="text-teal-600 text-xl shrink-0" /><div><b>Bank A</b>, Frankfurt. A dealer. Pays fixed.</div></div>
+  <div class="rounded-lg border border-slate-200 bg-white/70 p-3 flex gap-3"><carbon-piggy-bank class="text-teal-600 text-xl shrink-0" /><div><b>Pension Fund B</b>, Amsterdam. Receives fixed to match its long-term pension liabilities.</div></div>
+</div>
+
+</div>
+
+<div>
+
+<div class="flex gap-3 mb-4">
+  <carbon-help class="text-teal-600 text-xl shrink-0 mt-0.5" />
+  <div><div class="text-lg leading-snug text-slate-800" style="font-family: adobe-garamond-pro, serif">Why a pension fund does this</div><div class="text-sm mt-0.5 leading-snug">Its promises to pensioners are fixed. Receiving a fixed rate protects it if interest rates fall.</div></div>
+</div><div class="flex gap-3 mb-4">
+  <carbon-document-signed class="text-teal-600 text-xl shrink-0 mt-0.5" />
+  <div><div class="text-lg leading-snug text-slate-800" style="font-family: adobe-garamond-pro, serif">What is already in place</div><div class="text-sm mt-0.5 leading-snug">They signed a Master Agreement, a Schedule and a CSA in 2019. Nothing needs negotiating today except this trade.</div></div>
+</div><div class="flex gap-3 mb-4">
+  <carbon-email class="text-teal-600 text-xl shrink-0 mt-0.5" />
+  <div><div class="text-lg leading-snug text-slate-800" style="font-family: adobe-garamond-pro, serif">What happens next</div><div class="text-sm mt-0.5 leading-snug">Within the hour, Bank A sends a Confirmation. Everything else on it is incorporated by reference.</div></div>
+</div>
+
+</div>
+
+</div>
+
+<div class="abs-bl ml-14 mb-3 text-[10px] opacity-50">Illustrative. Fictional parties and figures; document wording paraphrased, not ISDA text.</div>
+
+<!--
+- €STR is the euro short-term rate published by the ECB. The 2021 Definitions name it as a Floating Rate Option: EUR-EuroSTR-OIS Compound.
+- Annual payments on both legs, Actual/360, is the usual convention for a euro overnight index swap.
+-->
+
+---
+
+# Layer 1 and 2: Master Agreement and Schedule
+
+<div class="text-sm opacity-70 -mt-2">Signed 2019-03-01. The printed form is never edited; the Schedule holds their choices</div>
+
+<div class="grid grid-cols-2 gap-6 mt-5 items-start">
+
+<div>
+
+<div class="rounded-lg border border-slate-300 bg-white shadow-md overflow-hidden">
+  <div class="px-4 py-2 bg-slate-100 border-b border-slate-300 flex items-baseline justify-between">
+    <div class="text-lg text-slate-800" style="font-family: adobe-garamond-pro, serif">2002 ISDA Master Agreement</div>
+    <div class="text-[10px] uppercase tracking-widest text-slate-500">Printed form, unchanged</div>
+  </div>
+  <div class="px-4 py-2 text-xs">
+    <div class="flex gap-3 py-1 border-b border-dashed border-slate-200 last:border-0"><div class="w-2/5 shrink-0 text-slate-500">Section 1(c)</div><div class="text-slate-800">All transactions form a single agreement</div></div>
+    <div class="flex gap-3 py-1 border-b border-dashed border-slate-200 last:border-0"><div class="w-2/5 shrink-0 text-slate-500">Section 2(c)</div><div class="text-slate-800">Same-day, same-currency payments are netted</div></div>
+    <div class="flex gap-3 py-1 border-b border-dashed border-slate-200 last:border-0"><div class="w-2/5 shrink-0 text-slate-500">Section 5</div><div class="text-slate-800">Events of Default and Termination Events</div></div>
+    <div class="flex gap-3 py-1 border-b border-dashed border-slate-200 last:border-0"><div class="w-2/5 shrink-0 text-slate-500">Section 6</div><div class="text-slate-800">Early termination and the Close-out Amount</div></div>
+    <div class="flex gap-3 py-1 border-b border-dashed border-slate-200 last:border-0"><div class="w-2/5 shrink-0 text-slate-500">Section 12</div><div class="text-slate-800">How notices are delivered</div></div>
+  </div>
+</div>
+
+</div>
+
+<div>
+
+<div class="rounded-lg border border-slate-300 bg-white shadow-md overflow-hidden">
+  <div class="px-4 py-2 bg-slate-100 border-b border-slate-300 flex items-baseline justify-between">
+    <div class="text-lg text-slate-800" style="font-family: adobe-garamond-pro, serif">Schedule</div>
+    <div class="text-[10px] uppercase tracking-widest text-slate-500">Their elections</div>
+  </div>
+  <div class="px-4 py-2 text-xs">
+    <div class="flex gap-3 py-1 border-b border-dashed border-slate-200 last:border-0"><div class="w-2/5 shrink-0 text-slate-500">Cross Default</div><div class="text-slate-800">Applies to both. Threshold: Bank A, 2% of shareholders' equity; Fund B, EUR 10 million</div></div>
+    <div class="flex gap-3 py-1 border-b border-dashed border-slate-200 last:border-0"><div class="w-2/5 shrink-0 text-slate-500">Automatic Early Termination</div><div class="text-slate-800">Not applicable</div></div>
+    <div class="flex gap-3 py-1 border-b border-dashed border-slate-200 last:border-0"><div class="w-2/5 shrink-0 text-slate-500">Termination Currency</div><div class="text-slate-800">EUR</div></div>
+    <div class="flex gap-3 py-1 border-b border-dashed border-slate-200 last:border-0"><div class="w-2/5 shrink-0 text-slate-500">Additional Termination Event</div><div class="text-slate-800">Fund B: net asset value falls by more than 25% within 12 months</div></div>
+    <div class="flex gap-3 py-1 border-b border-dashed border-slate-200 last:border-0"><div class="w-2/5 shrink-0 text-slate-500">Governing law</div><div class="text-slate-800">English law</div></div>
+    <div class="flex gap-3 py-1 border-b border-dashed border-slate-200 last:border-0"><div class="w-2/5 shrink-0 text-slate-500">Notices</div><div class="text-slate-800">Addresses, plus delivery through the ISDA Notices Hub</div></div>
+  </div>
+</div>
+
+</div>
+
+</div>
+
+<div class="grid grid-cols-3 gap-6 mt-5">
+<div class="flex gap-3">
+  <carbon-policy class="text-teal-600 text-xl shrink-0 mt-0.5" />
+  <div><div class="text-base leading-snug text-slate-800" style="font-family: adobe-garamond-pro, serif">The printed form is the same for everyone</div><div class="text-xs mt-0.5 leading-snug">Thousands of firms sign the identical 2002 text. That is what makes it a standard.</div></div>
+</div>
+<div class="flex gap-3">
+  <carbon-settings-adjust class="text-teal-600 text-xl shrink-0 mt-0.5" />
+  <div><div class="text-base leading-snug text-slate-800" style="font-family: adobe-garamond-pro, serif">The Schedule is where they differ</div><div class="text-xs mt-0.5 leading-snug">Every line is a choice from a small set of well-known positions. This is what the Clause Library later names.</div></div>
+</div>
+<div class="flex gap-3">
+  <carbon-warning-alt class="text-teal-600 text-xl shrink-0 mt-0.5" />
+  <div><div class="text-base leading-snug text-slate-800" style="font-family: adobe-garamond-pro, serif">A choice that matters later</div><div class="text-xs mt-0.5 leading-snug">The fund-specific termination event lets Bank A exit if Fund B shrinks fast.</div></div>
+</div>
+</div>
+
+<div class="abs-bl ml-14 mb-3 text-[10px] opacity-50">Illustrative. Fictional parties and figures; document wording paraphrased, not ISDA text.</div>
+
+<!--
+- Schedule Part 1 holds the termination-related elections (specified entities, cross default, automatic early termination, termination currency, additional termination events). Part 2 tax representations, Part 3 documents to deliver, Part 4 miscellaneous (notices, governing law, calculation agent), Part 5 other provisions.
+- A NAV trigger is a common additional termination event for funds.
+- Under English law, the 2016 VM CSA forms part of the Schedule.
+-->
+
+---
+
+# Layer 3: the Credit Support Annex
+
+<div class="text-sm opacity-70 -mt-2">Variation margin: collateral moves every day to cover the swap's current value</div>
+
+<div class="grid grid-cols-[3fr_2fr] gap-8 mt-5 items-start">
+
+<div>
+
+<div class="rounded-lg border border-slate-300 bg-white shadow-md overflow-hidden">
+  <div class="px-4 py-2 bg-slate-100 border-b border-slate-300 flex items-baseline justify-between">
+    <div class="text-lg text-slate-800" style="font-family: adobe-garamond-pro, serif">2016 Credit Support Annex for Variation Margin</div>
+    <div class="text-[10px] uppercase tracking-widest text-slate-500">English law, title transfer</div>
+  </div>
+  <div class="px-4 py-2 text-xs">
+    <div class="flex gap-3 py-1 border-b border-dashed border-slate-200 last:border-0"><div class="w-2/5 shrink-0 text-slate-500">Base Currency</div><div class="text-slate-800">EUR</div></div>
+    <div class="flex gap-3 py-1 border-b border-dashed border-slate-200 last:border-0"><div class="w-2/5 shrink-0 text-slate-500">Eligible Credit Support</div><div class="text-slate-800">EUR cash (100%); German government bonds up to 10 years (98%)</div></div>
+    <div class="flex gap-3 py-1 border-b border-dashed border-slate-200 last:border-0"><div class="w-2/5 shrink-0 text-slate-500">Threshold</div><div class="text-slate-800">None: margin from the first euro</div></div>
+    <div class="flex gap-3 py-1 border-b border-dashed border-slate-200 last:border-0"><div class="w-2/5 shrink-0 text-slate-500">Minimum Transfer Amount</div><div class="text-slate-800">EUR 250,000</div></div>
+    <div class="flex gap-3 py-1 border-b border-dashed border-slate-200 last:border-0"><div class="w-2/5 shrink-0 text-slate-500">Rounding</div><div class="text-slate-800">EUR 10,000</div></div>
+    <div class="flex gap-3 py-1 border-b border-dashed border-slate-200 last:border-0"><div class="w-2/5 shrink-0 text-slate-500">Valuation Agent</div><div class="text-slate-800">The party making the demand</div></div>
+    <div class="flex gap-3 py-1 border-b border-dashed border-slate-200 last:border-0"><div class="w-2/5 shrink-0 text-slate-500">Valuation Date</div><div class="text-slate-800">Every Local Business Day</div></div>
+    <div class="flex gap-3 py-1 border-b border-dashed border-slate-200 last:border-0"><div class="w-2/5 shrink-0 text-slate-500">Interest on cash</div><div class="text-slate-800">€STR</div></div>
+  </div>
+</div>
+
+</div>
+
+<div>
+
+<div class="flex gap-3 mb-4">
+  <carbon-renew class="text-teal-600 text-xl shrink-0 mt-0.5" />
+  <div><div class="text-lg leading-snug text-slate-800" style="font-family: adobe-garamond-pro, serif">Every business day</div><div class="text-sm mt-0.5 leading-snug">Each side values the swap. If it owes more than the minimum, it transfers collateral.</div></div>
+</div><div class="flex gap-3 mb-4">
+  <carbon-scales class="text-teal-600 text-xl shrink-0 mt-0.5" />
+  <div><div class="text-lg leading-snug text-slate-800" style="font-family: adobe-garamond-pro, serif">Why there is no threshold</div><div class="text-sm mt-0.5 leading-snug">EU margin rules require variation margin from the first euro for firms in scope.</div></div>
+</div><div class="flex gap-3 mb-4">
+  <carbon-tag class="text-teal-600 text-xl shrink-0 mt-0.5" />
+  <div><div class="text-lg leading-snug text-slate-800" style="font-family: adobe-garamond-pro, serif">Again, elections</div><div class="text-sm mt-0.5 leading-snug">The CSA is a standard text with a page of choices. The haircut (98%) is one of them.</div></div>
+</div>
+
+</div>
+
+</div>
+
+<div class="abs-bl ml-14 mb-3 text-[10px] opacity-50">Illustrative. Fictional parties and figures; document wording paraphrased, not ISDA text.</div>
+
+<!--
+- Title transfer: the collateral changes owner, and the obligation is to return equivalent collateral.
+- Initial margin would need a separate document with a custodian; it is left out here to keep the example small.
+- The figures are illustrative.
+-->
+
+---
+
+# Layer 4: the Definitions
+
+<div class="text-sm opacity-70 -mt-2">Never signed, only named. One line in the Confirmation imports a whole book</div>
+
+<div class="grid grid-cols-[3fr_2fr] gap-8 mt-5 items-start">
+
+<div>
+
+<div class="rounded-lg border border-slate-300 bg-white shadow-md overflow-hidden">
+  <div class="px-4 py-2 bg-slate-100 border-b border-slate-300 flex items-baseline justify-between">
+    <div class="text-lg text-slate-800" style="font-family: adobe-garamond-pro, serif">2021 ISDA Interest Rate Derivatives Definitions</div>
+    <div class="text-[10px] uppercase tracking-widest text-slate-500">Digital, versioned</div>
+  </div>
+  <div class="px-4 py-3 text-xs space-y-3">
+    <div><div class="text-slate-500">Floating Rate Option</div><div class="text-slate-800"><b>EUR-EuroSTR-OIS Compound</b>: €STR for each day of the period, compounded, as set out in the Floating Rate Matrix</div></div>
+    <div><div class="text-slate-500">Day Count Fraction</div><div class="text-slate-800"><b>Actual/360</b>: actual days in the period divided by 360</div></div>
+    <div><div class="text-slate-500">Business Day</div><div class="text-slate-800"><b>TARGET</b>: a day the euro payment system is open</div></div>
+    <div><div class="text-slate-500">If €STR stops</div><div class="text-slate-800">A fallback rate applies, set out in the Definitions themselves</div></div>
+  </div>
+</div>
+
+</div>
+
+<div>
+
+<div class="flex gap-3 mb-4">
+  <carbon-book class="text-teal-600 text-xl shrink-0 mt-0.5" />
+  <div><div class="text-lg leading-snug text-slate-800" style="font-family: adobe-garamond-pro, serif">A shared vocabulary</div><div class="text-sm mt-0.5 leading-snug">"EUR-EuroSTR-OIS Compound" means exactly the same thing in every trade in the market.</div></div>
+</div><div class="flex gap-3 mb-4">
+  <carbon-version class="text-teal-600 text-xl shrink-0 mt-0.5" />
+  <div><div class="text-lg leading-snug text-slate-800" style="font-family: adobe-garamond-pro, serif">Versions, not supplements</div><div class="text-sm mt-0.5 leading-snug">The Definitions are updated as numbered versions. A trade can name the one it uses.</div></div>
+</div><div class="flex gap-3 mb-4">
+  <carbon-renew class="text-teal-600 text-xl shrink-0 mt-0.5" />
+  <div><div class="text-lg leading-snug text-slate-800" style="font-family: adobe-garamond-pro, serif">Fallbacks built in</div><div class="text-sm mt-0.5 leading-snug">The answer to "what if the rate disappears?" is already in the book, learned from LIBOR.</div></div>
+</div>
+
+</div>
+
+</div>
+
+<div class="abs-bl ml-14 mb-3 text-[10px] opacity-50">Illustrative. Fictional parties and figures; document wording paraphrased, not ISDA text.</div>
+
+<!--
+- The 2021 Definitions are published on ISDA's MyLibrary platform, with matrices such as the Floating Rate Matrix kept alongside.
+- The paraphrases on the slide are mine; the defined terms in bold are the real names.
+-->
+
+---
+
+# Layer 5: the Confirmation
+
+<div class="text-sm opacity-70 -mt-2">Sent the same morning. Short, because everything else is incorporated</div>
+
+<div class="grid grid-cols-[3fr_2fr] gap-8 mt-5 items-start">
+
+<div>
+
+<div class="rounded-lg border border-slate-300 bg-white shadow-md overflow-hidden">
+  <div class="px-4 py-2 bg-slate-100 border-b border-slate-300 flex items-baseline justify-between">
+    <div class="text-lg text-slate-800" style="font-family: adobe-garamond-pro, serif">Confirmation</div>
+    <div class="text-[10px] uppercase tracking-widest text-slate-500">Bank A to Pension Fund B, 2026-10-15</div>
+  </div>
+  <div class="px-4 py-2 text-xs">
+    <div class="flex gap-3 py-1 border-b border-dashed border-slate-200 last:border-0"><div class="w-2/5 shrink-0 text-slate-500">Incorporates</div><div class="text-slate-800">The 2002 Master Agreement between us dated 2019-03-01, and the 2021 Definitions (version in force on the Trade Date)</div></div>
+    <div class="flex gap-3 py-1 border-b border-dashed border-slate-200 last:border-0"><div class="w-2/5 shrink-0 text-slate-500">Trade Date</div><div class="text-slate-800">2026-10-15</div></div>
+    <div class="flex gap-3 py-1 border-b border-dashed border-slate-200 last:border-0"><div class="w-2/5 shrink-0 text-slate-500">Effective Date</div><div class="text-slate-800">2026-10-19</div></div>
+    <div class="flex gap-3 py-1 border-b border-dashed border-slate-200 last:border-0"><div class="w-2/5 shrink-0 text-slate-500">Termination Date</div><div class="text-slate-800">2031-10-19</div></div>
+    <div class="flex gap-3 py-1 border-b border-dashed border-slate-200 last:border-0"><div class="w-2/5 shrink-0 text-slate-500">Notional Amount</div><div class="text-slate-800">EUR 50,000,000</div></div>
+    <div class="flex gap-3 py-1 border-b border-dashed border-slate-200 last:border-0"><div class="w-2/5 shrink-0 text-slate-500">Fixed Rate Payer</div><div class="text-slate-800">Bank A, 2.10%, Actual/360, annually</div></div>
+    <div class="flex gap-3 py-1 border-b border-dashed border-slate-200 last:border-0"><div class="w-2/5 shrink-0 text-slate-500">Floating Rate Payer</div><div class="text-slate-800">Fund B, EUR-EuroSTR-OIS Compound, Actual/360, annually</div></div>
+    <div class="flex gap-3 py-1 border-b border-dashed border-slate-200 last:border-0"><div class="w-2/5 shrink-0 text-slate-500">Business Days</div><div class="text-slate-800">TARGET</div></div>
+    <div class="flex gap-3 py-1 border-b border-dashed border-slate-200 last:border-0"><div class="w-2/5 shrink-0 text-slate-500">Calculation Agent</div><div class="text-slate-800">Bank A</div></div>
+    <div class="flex gap-3 py-1 border-b border-dashed border-slate-200 last:border-0"><div class="w-2/5 shrink-0 text-slate-500">UTI</div><div class="text-slate-800">Assigned by Bank A (see the report)</div></div>
+  </div>
+</div>
+
+</div>
+
+<div>
+
+<div class="flex gap-3 mb-4">
+  <carbon-email class="text-teal-600 text-xl shrink-0 mt-0.5" />
+  <div><div class="text-lg leading-snug text-slate-800" style="font-family: adobe-garamond-pro, serif">One page per trade</div><div class="text-sm mt-0.5 leading-snug">The economics fit in ten lines. Default, netting, collateral and notices are already agreed.</div></div>
+</div><div class="flex gap-3 mb-4">
+  <carbon-arrow-up class="text-teal-600 text-xl shrink-0 mt-0.5" />
+  <div><div class="text-lg leading-snug text-slate-800" style="font-family: adobe-garamond-pro, serif">Precedence</div><div class="text-sm mt-0.5 leading-snug">If the Confirmation contradicts the Schedule, the Confirmation wins, for this trade only.</div></div>
+</div><div class="flex gap-3 mb-4">
+  <carbon-checkmark-outline class="text-teal-600 text-xl shrink-0 mt-0.5" />
+  <div><div class="text-lg leading-snug text-slate-800" style="font-family: adobe-garamond-pro, serif">Matched, not signed</div><div class="text-sm mt-0.5 leading-snug">In practice both sides match the terms electronically within the day. The 2005 backlog was a backlog of exactly these.</div></div>
+</div>
+
+</div>
+
+</div>
+
+<div class="abs-bl ml-14 mb-3 text-[10px] opacity-50">Illustrative. Fictional parties and figures; document wording paraphrased, not ISDA text.</div>
+
+<!--
+- Section 1(b): Confirmation prevails over Schedule and Master for the relevant transaction.
+- Effective Date T+2 business days. Payment dates 19 October each year, adjusted for TARGET holidays.
+- Electronic matching platforms replaced most paper confirmations for standard products after 2005.
+-->
+
+---
+
+# Layer 6: the same trade as data
+
+<div class="text-sm opacity-70 -mt-2">What the Clause Library and the Common Domain Model add on top of the paper</div>
+
+<div class="grid grid-cols-[3fr_2fr] gap-8 mt-5 items-start">
+
+<div>
+
+<div class="text-xs uppercase tracking-widest text-teal-700 font-semibold mb-2">Schedule elections, as named choices</div>
+<div class="text-xs">
+
+```text
+schedule:
+  clause "Cross Default"
+    variant "applies to both, threshold per party"
+      Bank A: 2% of shareholders' equity
+      Fund B: EUR 10,000,000
+  clause "Automatic Early Termination"
+    variant "not applicable"
+```
+
+</div>
+<div class="text-xs uppercase tracking-widest text-teal-700 font-semibold mt-2 mb-1">The trade, in CDM terms (simplified)</div>
+<div class="text-xs">
+
+```text
+trade:
+  tradeDate: 2026-10-15
+  payout 1: InterestRatePayout
+    payer: Bank A   receiver: Fund B
+    fixedRate: 0.021   dayCount: ACT/360
+  payout 2: InterestRatePayout
+    payer: Fund B   receiver: Bank A
+    floatingRateIndex: EUR-EuroSTR-OIS Compound
+  quantity: 50,000,000 EUR
+  documentation: ISDA 2002 Master, dated 2019-03-01
+```
+
+</div>
+
+</div>
+
+<div>
+
+<div class="flex gap-3 mb-4">
+  <carbon-search class="text-teal-600 text-xl shrink-0 mt-0.5" />
+  <div><div class="text-lg leading-snug text-slate-800" style="font-family: adobe-garamond-pro, serif">A machine can now answer</div><div class="text-sm mt-0.5 leading-snug">"Which counterparties have a cross default threshold above EUR 10 million?" No lawyer needs to read.</div></div>
+</div><div class="flex gap-3 mb-4">
+  <carbon-data-structured class="text-teal-600 text-xl shrink-0 mt-0.5" />
+  <div><div class="text-lg leading-snug text-slate-800" style="font-family: adobe-garamond-pro, serif">The swap qualifies itself</div><div class="text-sm mt-0.5 leading-snug">Two interest rate payouts, one fixed, one floating: the model names it InterestRate_IRSwap_FixedFloat (Appendix A, Example 2).</div></div>
+</div><div class="flex gap-3 mb-4">
+  <carbon-certificate class="text-teal-600 text-xl shrink-0 mt-0.5" />
+  <div><div class="text-lg leading-snug text-slate-800" style="font-family: adobe-garamond-pro, serif">The text still rules</div><div class="text-sm mt-0.5 leading-snug">The record mirrors the signed documents. If they disagree, the documents win.</div></div>
+</div>
+
+</div>
+
+</div>
+
+<div class="abs-bl ml-14 mb-3 text-[10px] opacity-50">Illustrative. Fictional parties and figures; document wording paraphrased, not ISDA text.</div>
+
+<!--
+- Both blocks are sketches, not real syntax. Real Clause Library identifiers are assigned by ISDA; real CDM data is JSON and nests prices and quantities more deeply.
+- The point: the same facts as the paper, but each one addressable and comparable.
+-->
+
+---
+
+# Layer 7: the regulatory report
+
+<div class="text-sm opacity-70 -mt-2">Under EMIR, both sides report the trade by the next working day</div>
+
+<div class="grid grid-cols-[3fr_2fr] gap-8 mt-5 items-start">
+
+<div>
+
+<div class="rounded-lg border border-slate-300 bg-white shadow-md overflow-hidden">
+  <div class="px-4 py-2 bg-slate-100 border-b border-slate-300 flex items-baseline justify-between">
+    <div class="text-lg text-slate-800" style="font-family: adobe-garamond-pro, serif">EMIR trade report (extract)</div>
+    <div class="text-[10px] uppercase tracking-widest text-slate-500">ISO 20022, to a trade repository</div>
+  </div>
+  <div class="px-4 py-2 text-xs">
+    <div class="flex gap-3 py-1 border-b border-dashed border-slate-200 last:border-0"><div class="w-2/5 shrink-0 text-slate-500">UTI</div><div class="text-slate-800">LEI of Bank A + trade reference</div></div>
+    <div class="flex gap-3 py-1 border-b border-dashed border-slate-200 last:border-0"><div class="w-2/5 shrink-0 text-slate-500">UPI</div><div class="text-slate-800">12-character product code, issued by the ANNA DSB</div></div>
+    <div class="flex gap-3 py-1 border-b border-dashed border-slate-200 last:border-0"><div class="w-2/5 shrink-0 text-slate-500">Counterparty 1 / 2</div><div class="text-slate-800">LEIs of Bank A / Fund B</div></div>
+    <div class="flex gap-3 py-1 border-b border-dashed border-slate-200 last:border-0"><div class="w-2/5 shrink-0 text-slate-500">Effective / expiration</div><div class="text-slate-800">2026-10-19 / 2031-10-19</div></div>
+    <div class="flex gap-3 py-1 border-b border-dashed border-slate-200 last:border-0"><div class="w-2/5 shrink-0 text-slate-500">Notional, leg 1 and 2</div><div class="text-slate-800">50,000,000 EUR</div></div>
+    <div class="flex gap-3 py-1 border-b border-dashed border-slate-200 last:border-0"><div class="w-2/5 shrink-0 text-slate-500">Fixed rate, leg 1</div><div class="text-slate-800">2.10</div></div>
+    <div class="flex gap-3 py-1 border-b border-dashed border-slate-200 last:border-0"><div class="w-2/5 shrink-0 text-slate-500">Floating rate, leg 2</div><div class="text-slate-800">€STR</div></div>
+    <div class="flex gap-3 py-1 border-b border-dashed border-slate-200 last:border-0"><div class="w-2/5 shrink-0 text-slate-500">Collateral portfolio</div><div class="text-slate-800">Yes: covered by the VM CSA</div></div>
+  </div>
+</div>
+
+</div>
+
+<div>
+
+<div class="flex gap-3 mb-4">
+  <carbon-report class="text-teal-600 text-xl shrink-0 mt-0.5" />
+  <div><div class="text-lg leading-snug text-slate-800" style="font-family: adobe-garamond-pro, serif">Generated, not typed</div><div class="text-sm mt-0.5 leading-snug">Digital Regulatory Reporting turns the CDM record into the report, using one shared reading of the EMIR rules.</div></div>
+</div><div class="flex gap-3 mb-4">
+  <carbon-tag class="text-teal-600 text-xl shrink-0 mt-0.5" />
+  <div><div class="text-lg leading-snug text-slate-800" style="font-family: adobe-garamond-pro, serif">Two identifiers join it up</div><div class="text-sm mt-0.5 leading-snug">The UTI identifies this trade for both sides and every regulator. The UPI identifies what kind of product it is.</div></div>
+</div><div class="flex gap-3 mb-4">
+  <carbon-scales class="text-teal-600 text-xl shrink-0 mt-0.5" />
+  <div><div class="text-lg leading-snug text-slate-800" style="font-family: adobe-garamond-pro, serif">The duty stays with each firm</div><div class="text-sm mt-0.5 leading-snug">A shared reading is not an official one. Bank A and Fund B each remain responsible for their reports.</div></div>
+</div>
+
+</div>
+
+</div>
+
+<div class="abs-bl ml-14 mb-3 text-[10px] opacity-50">Illustrative. Fictional parties and figures; document wording paraphrased, not ISDA text.</div>
+
+<!--
+- EMIR Refit (live 2024-04-29) uses ISO 20022 XML and about 200 fields; eight are shown.
+- The UTI is generated by one party and shared with the other, so both reports carry the same identifier.
+- Values are placeholders, not real LEIs or codes.
+-->
+
+---
+
+# The life of the trade
+
+<div class="text-sm opacity-70 -mt-2">Normal days, and the day something goes wrong</div>
+
+<div class="grid grid-cols-[3fr_2fr] gap-8 mt-5 items-start">
+
+<div>
+
+<div class="flex gap-4 mb-3"><div class="flex flex-col items-center"><div class="w-9 h-9 rounded-full bg-teal-600 text-white flex items-center justify-center"><carbon-renew /></div><div class="w-px flex-1 bg-slate-300 mt-1"></div></div><div class="pb-1"><div class="text-base text-slate-800" style="font-family: adobe-garamond-pro, serif">Every business day</div><div class="text-xs leading-snug">Valuation and variation margin. If the swap moves EUR 400,000 in Bank A's favour, Fund B transfers that amount in cash or bonds.</div></div></div>
+<div class="flex gap-4 mb-3"><div class="flex flex-col items-center"><div class="w-9 h-9 rounded-full bg-teal-600 text-white flex items-center justify-center"><carbon-currency-euro /></div><div class="w-px flex-1 bg-slate-300 mt-1"></div></div><div class="pb-1"><div class="text-base text-slate-800" style="font-family: adobe-garamond-pro, serif">Every 19 October</div><div class="text-xs leading-snug">Each side's payment is calculated. The two amounts are netted into one payment by whoever owes more (Section 2(c)).</div></div></div>
+<div class="flex gap-4 mb-3"><div class="flex flex-col items-center"><div class="w-9 h-9 rounded-full bg-amber-100 text-amber-700 flex items-center justify-center"><carbon-warning-alt /></div><div class="w-px flex-1 bg-slate-300 mt-1"></div></div><div class="pb-1"><div class="text-base text-slate-800" style="font-family: adobe-garamond-pro, serif">2028-10-19: Fund B fails to pay</div><div class="text-xs leading-snug">Bank A notifies the failure. After one Local Business Day of grace, it is an Event of Default.</div></div></div>
+<div class="flex gap-4 mb-3"><div class="flex flex-col items-center"><div class="w-9 h-9 rounded-full bg-amber-100 text-amber-700 flex items-center justify-center"><carbon-send /></div><div class="w-px flex-1 bg-slate-300 mt-1"></div></div><div class="pb-1"><div class="text-base text-slate-800" style="font-family: adobe-garamond-pro, serif">The next day: the notice</div><div class="text-xs leading-snug">Bank A designates an Early Termination Date, delivered through the Notices Hub with a time stamp. No courier, no old address.</div></div></div>
+<div class="flex gap-4 mb-3"><div class="flex flex-col items-center"><div class="w-9 h-9 rounded-full bg-amber-100 text-amber-700 flex items-center justify-center"><carbon-finance /></div></div><div class="pb-1"><div class="text-base text-slate-800" style="font-family: adobe-garamond-pro, serif">Close-out</div><div class="text-xs leading-snug">Bank A values all transactions under the Master Agreement, nets them with the collateral it holds, and arrives at one amount.</div></div></div>
+
+</div>
+
+<div>
+
+<div class="flex gap-3 mb-4">
+  <carbon-document-signed class="text-teal-600 text-xl shrink-0 mt-0.5" />
+  <div><div class="text-lg leading-snug text-slate-800" style="font-family: adobe-garamond-pro, serif">Every step was agreed in 2019</div><div class="text-sm mt-0.5 leading-snug">Netting, grace periods, notices and close-out come from the Master Agreement and Schedule, not from the Confirmation.</div></div>
+</div><div class="flex gap-3 mb-4">
+  <carbon-partnership class="text-teal-600 text-xl shrink-0 mt-0.5" />
+  <div><div class="text-lg leading-snug text-slate-800" style="font-family: adobe-garamond-pro, serif">Why the single agreement matters</div><div class="text-sm mt-0.5 leading-snug">Fund B's administrator cannot pick the profitable trades and refuse the rest. There is one net amount.</div></div>
+</div><div class="flex gap-3 mb-4">
+  <carbon-time class="text-teal-600 text-xl shrink-0 mt-0.5" />
+  <div><div class="text-lg leading-snug text-slate-800" style="font-family: adobe-garamond-pro, serif">Compare 2008</div><div class="text-sm mt-0.5 leading-snug">The same steps for Lehman meant finding 6,000 agreements and sending notices by hand.</div></div>
+</div>
+
+</div>
+
+</div>
+
+<div class="abs-bl ml-14 mb-3 text-[10px] opacity-50">Illustrative. Fictional parties and figures; document wording paraphrased, not ISDA text.</div>
+
+<!--
+- Section 5(a)(i): failure to pay, with a grace period of one Local Business Day after notice under the 2002 form.
+- Section 6(a): the non-defaulting party may designate an Early Termination Date by notice. Section 6(e) with the Close-out Amount determines the payment.
+- Under the title transfer VM CSA, the collateral balance enters the close-out calculation.
+- The 2028 default is invented for the example.
+-->
