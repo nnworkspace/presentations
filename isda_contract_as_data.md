@@ -357,32 +357,48 @@ After 2008, every regime wrote reporting rules in prose, and every bank translat
 
 # What did not change
 
-<div class="grid grid-cols-2 gap-10 mt-8">
+<div class="text-sm opacity-70 -mt-2">The honest half of the story</div>
 
-<div>
+<div class="grid grid-cols-2 gap-6 mt-6 items-stretch">
 
-<v-clicks>
+<div class="rounded-xl border border-slate-200 bg-white/70 px-5 py-4 shadow-sm">
+  <div class="text-xs uppercase tracking-widest text-teal-700 font-semibold mb-4 pb-2 border-b border-slate-200">The text still rules</div>
+  <div v-click class="flex gap-3 mb-4">
+    <carbon-certificate class="text-teal-600 text-xl shrink-0 mt-0.5" />
+    <div><div class="text-lg leading-snug text-slate-800" style="font-family: adobe-garamond-pro, serif">The legal text stays authoritative</div><div class="text-sm mt-0.5 leading-snug">When the data and the signed text disagree, the text wins.</div></div>
+  </div>
+  <div v-click class="flex gap-3 mb-4">
+    <carbon-document-view class="text-teal-600 text-xl shrink-0 mt-0.5" />
+    <div><div class="text-lg leading-snug text-slate-800" style="font-family: adobe-garamond-pro, serif">People still read documents</div><div class="text-sm mt-0.5 leading-snug">Negotiators and signatories work with text, not code.</div></div>
+  </div>
+  <div v-click class="flex gap-3 mb-4">
+    <carbon-scales class="text-teal-600 text-xl shrink-0 mt-0.5" />
+    <div><div class="text-lg leading-snug text-slate-800" style="font-family: adobe-garamond-pro, serif">A lawyer decides, not the model</div><div class="text-sm mt-0.5 leading-snug">A model can record what a contract says. It cannot settle what it means.</div></div>
+  </div>
+</div>
 
-- **The legal text stays authoritative.** When the data and the signed text disagree, the text wins.
-- **People still read documents.** Negotiators and signatories work with text, not code.
-- **A lawyer decides, not the model.** A model can record what a contract says. It cannot settle what it means.
-
-</v-clicks>
+<div class="rounded-xl border border-slate-200 bg-white/70 px-5 py-4 shadow-sm">
+  <div class="text-xs uppercase tracking-widest text-teal-700 font-semibold mb-4 pb-2 border-b border-slate-200">The pace stayed human</div>
+  <div v-click class="flex gap-3 mb-4">
+    <carbon-growth class="text-teal-600 text-xl shrink-0 mt-0.5" />
+    <div><div class="text-lg leading-snug text-slate-800" style="font-family: adobe-garamond-pro, serif">Adoption is gradual</div><div class="text-sm mt-0.5 leading-snug">Most banks map to the model at the edges rather than build on it.</div></div>
+  </div>
+  <div v-click class="flex gap-3 mb-4">
+    <carbon-partnership class="text-teal-600 text-xl shrink-0 mt-0.5" />
+    <div><div class="text-lg leading-snug text-slate-800" style="font-family: adobe-garamond-pro, serif">Agreement is the slow part</div><div class="text-sm mt-0.5 leading-snug">Lawyers, operations, technologists and regulators had to accept the same definitions.</div></div>
+  </div>
+  <div v-click class="flex gap-3 mb-4">
+    <carbon-hourglass class="text-teal-600 text-xl shrink-0 mt-0.5" />
+    <div><div class="text-lg leading-snug text-slate-800" style="font-family: adobe-garamond-pro, serif">It took a decade</div><div class="text-sm mt-0.5 leading-snug">Each step depended on the one before it.</div></div>
+  </div>
+</div>
 
 </div>
 
-<div>
-
-<v-clicks>
-
-- **Adoption is gradual.** Most banks map to the model at the edges rather than build on it.
-- **Agreement is the slow part.** Lawyers, operations, technologists and regulators had to accept the same definitions.
-- **It took a decade.** Each step depended on the one before it.
-
-</v-clicks>
-
-</div>
-
+<div v-click class="mt-6 flex items-center gap-4">
+  <div class="h-px flex-1 bg-slate-300"></div>
+  <div class="text-base italic text-slate-500">What worked: the layering held, so each digital step attached to an existing seam.</div>
+  <div class="h-px flex-1 bg-slate-300"></div>
 </div>
 
 <!--
