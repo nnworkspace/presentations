@@ -457,13 +457,22 @@ Any scheme with a rulebook, technical standards and obligations for many partici
 
 # The human gate stays where it belongs
 
-```mermaid {scale: 0.75}
+```mermaid {scale: 0.8}
+---
+config:
+  fontFamily: "Hanken Grotesk, Arial, sans-serif"
+  themeVariables:
+    fontSize: "14px"
+  flowchart:
+    htmlLabels: false
+    padding: 12
+---
 flowchart LR
-  P["Participant<br/>proposes a change"] --> R["Review<br/>visible to all, with reasons"]
+  P["Participant<br/>proposes a change"] --> R["Review, visible<br/>to all, with reasons"]
   R --> D{"Scheme owner<br/>decides"}
-  D -- "approved " --> V["New numbered version<br/>published"]
-  D -- "returned " --> P
-  V --> H["Change record<br/>who, what, when, why"]
+  D -- approved --> V["New numbered<br/>version published"]
+  D -- returned --> P
+  V --> H["Change record:<br/>who, what,<br/>when, why"]
 ```
 
 <div class="grid grid-cols-3 gap-6 mt-8 text-sm text-center">
