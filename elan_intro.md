@@ -743,10 +743,17 @@ It allows **different automation and linting** for each document.
 
 ### A self-contained system of references
 
-```mermaid{scale: 0.6}
+```mermaid {scale: 0.46}
+---
+config:
+  flowchart:
+    nodeSpacing: 30
+    rankSpacing: 28
+    wrappingWidth: 400
+---
 flowchart TB
 
-    Overview@{ shape: doc, label:"SPEC-XX-ROOT<br/>Overview & Traceability"}
+    Overview@{ shape: doc, label: "SPEC-XX-ROOT<br/>Overview &amp; Traceability" }
 
     FUNC[[SPEC-XX-FUNC<br/>State Machines & Rules]]
     DATA[(SPEC-XX-DATA<br/>Entities & Constraints)]
