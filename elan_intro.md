@@ -551,13 +551,20 @@ Where intent stops being abstract, and starts being enforceable
 
 <div>
 
-```mermaid {scale: 0.6}
+```mermaid {scale: 0.55}
+---
+config:
+  flowchart:
+    nodeSpacing: 30
+    rankSpacing: 28
+    wrappingWidth: 400
+---
 flowchart TD
     A[10 Legal & Policy] --> Req[20 Requirements]
     Req --> B[30 Rulebook]
     B --> BA[40 Business Architecture]
     BA --> C[50 System Architecture]
-    C --> D[60 Specifications]
+    C --> D[60 Specifications]
     D --> E[70 Tests]
     D --> F[80 Code]
     D --> G[90 Reports]
