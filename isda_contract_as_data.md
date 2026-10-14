@@ -281,6 +281,61 @@ After 2008, every regime wrote reporting rules in prose, and every bank translat
 
 ---
 
+# Inside the model: four questions it answers
+
+<div class="grid grid-cols-2 gap-5 mt-6">
+
+<div v-click class="rounded-xl border border-slate-200 bg-white/60 p-4 flex gap-4">
+  <carbon-document-signed class="text-teal-600 text-2xl shrink-0 mt-1" />
+  <div>
+    <div class="text-xs uppercase tracking-widest text-teal-700 font-semibold">1 · What is a trade?</div>
+    <div class="text-xl mt-1 mb-1" style="font-family: adobe-garamond-pro, serif">A title deed and the house's file</div>
+    <div class="text-sm">The trade rarely changes. Its state keeps growing: every reset, payment and valuation.</div>
+  </div>
+</div>
+
+<div v-click class="rounded-xl border border-slate-200 bg-white/60 p-4 flex gap-4">
+  <carbon-search class="text-teal-600 text-2xl shrink-0 mt-1" />
+  <div>
+    <div class="text-xs uppercase tracking-widest text-teal-700 font-semibold">2 · What is it?</div>
+    <div class="text-xl mt-1 mb-1" style="font-family: adobe-garamond-pro, serif">A birdwatcher's checklist</div>
+    <div class="text-sm">Feature by feature, then the name. "Fixed-for-floating swap" is a conclusion, not a label.</div>
+  </div>
+</div>
+
+<div v-click class="rounded-xl border border-slate-200 bg-white/60 p-4 flex gap-4">
+  <carbon-music class="text-teal-600 text-2xl shrink-0 mt-1" />
+  <div>
+    <div class="text-xs uppercase tracking-widest text-teal-700 font-semibold">3 · What is an event made of?</div>
+    <div class="text-xl mt-1 mb-1" style="font-family: adobe-garamond-pro, serif">Notes in a chord</div>
+    <div class="text-sm">A few primitive instructions. A partial termination is a quantity change, read off the notes.</div>
+  </div>
+</div>
+
+<div v-click class="rounded-xl border border-slate-200 bg-white/60 p-4 flex gap-4">
+  <carbon-arrows-horizontal class="text-teal-600 text-2xl shrink-0 mt-1" />
+  <div>
+    <div class="text-xs uppercase tracking-widest text-teal-700 font-semibold">4 · How did LIBOR's end become data?</div>
+    <div class="text-xl mt-1 mb-1" style="font-family: adobe-garamond-pro, serif">Two records of one event</div>
+    <div class="text-sm">The Protocol changed the words. An index transition changes the trade. Each can be checked against the other.</div>
+  </div>
+</div>
+
+</div>
+
+<div class="mt-6 text-xs opacity-60">The model code for each example is in the appendix.</div>
+
+<!--
+- The Common Domain Model is not the Master Agreement translated into code. It answers more basic questions afresh, and these four show how.
+- 1: Trade and TradeState. Trade is the transaction (identifiers, trade date, parties, contract details). TradeState is where it stands now, with the history of resets, transfers, observations and valuations.
+- 2: Qualification functions. If it is an interest rate swap, one leg fixed and one floating, not zero-coupon and not an overnight index swap, then it is what the ISDA taxonomy calls InterestRate_IRSwap_FixedFloat.
+- 3: Primitive instructions. A piano has no key for C major; the chord is C, E and G. Lower the E and the same hand plays C minor. Quantity down, trade still open: partial termination. Quantity to zero and closed: a different event.
+- 4: IndexTransitionInstruction carries the new index, the spread adjustment, the effective date and an optional compensating payment.
+- The point for executives: a shared model makes "do we mean the same thing?" a question a machine can answer.
+-->
+
+---
+
 # What did not change
 
 <div class="grid grid-cols-2 gap-10 mt-8">
@@ -562,5 +617,191 @@ flowchart LR
 <div class="mt-10 text-xs opacity-70">
 
 Cover illustration generated with Gemini. Lehman photo illustration based on Robert Scoble's photo, CC BY 2.0, via Wikimedia Commons.
+
+</div>
+
+---
+layout: center
+class: text-center
+---
+
+# Appendix
+
+The four model examples, as code
+
+<div class="mt-4 text-sm opacity-70">Taken from the Common Domain Model repository at FINOS. Descriptions and some annotations omitted; shortened where marked.</div>
+
+---
+
+# Example 1: a trade, and the state it is in
+
+<div class="grid grid-cols-[3fr_2fr] gap-8 mt-4">
+
+<div class="text-xs">
+
+```text
+type Trade extends TradableProduct:
+    [metadata key]
+    tradeIdentifier TradeIdentifier (1..*)
+    tradeDate date (1..1)
+    tradeTime TimeZone (0..1)
+    party Party (0..*)
+    partyRole PartyRole (0..*)
+    executionDetails ExecutionDetails (0..1)
+    contractDetails ContractDetails (0..1)
+    collateral Collateral (0..1)
+
+type TradeState:
+    [metadata key]
+    [rootType]
+    trade Trade (1..1)
+    state State (0..1)
+    resetHistory Reset (0..*)
+    transferHistory TransferState (0..*)
+    observationHistory ObservationEvent (0..*)
+    valuationHistory Valuation (0..*)
+```
+
+</div>
+
+<div class="text-sm">
+
+**Trade** is the transaction: at least one identifier, exactly one trade date, the parties and their roles.
+
+**TradeState** is where it stands now, with every reset, transfer, observation and valuation so far.
+
+<div class="mt-4 p-3 rounded-lg bg-teal-50 border-l-4 border-teal-600">
+
+The title deed and the house's file: the deed rarely changes, the file keeps growing.
+
+</div>
+
+<div class="mt-4 text-xs opacity-70">(1..1) exactly one · (0..1) optional · (1..*) at least one · (0..*) any number</div>
+
+</div>
+
+</div>
+
+---
+
+# Example 2: recognising an interest rate swap
+
+<div class="grid grid-cols-[3fr_2fr] gap-8 mt-4">
+
+<div class="text-xs">
+
+```text
+func Qualify_InterestRate_IRSwap_FixedFloat:
+    [qualification Product]
+    inputs:
+        economicTerms EconomicTerms (1..1)
+    output:
+        is_product boolean (1..1)
+
+    set is_product:
+        Qualify_BaseProduct_IRSwap(economicTerms) = True
+            and Qualify_SubProduct_FixedFloat(economicTerms) = True
+            and Qualify_Transaction_ZeroCoupon(economicTerms) = False
+            and Qualify_Transaction_OIS(economicTerms) = False
+```
+
+</div>
+
+<div class="text-sm">
+
+If it is an interest rate swap, one leg is fixed and the other floating, it is not zero-coupon and not an overnight index swap, then it is **InterestRate_IRSwap_FixedFloat** in the ISDA product taxonomy.
+
+<div class="mt-4 p-3 rounded-lg bg-teal-50 border-l-4 border-teal-600">
+
+A birdwatcher's checklist: plumage, beak, feet, then the name.
+
+</div>
+
+</div>
+
+</div>
+
+---
+
+# Example 3: an event built from primitives
+
+<div class="grid grid-cols-[3fr_2fr] gap-8 mt-4">
+
+<div class="text-xs">
+
+```text
+type PrimitiveInstruction:
+    // abridged: 13 optional instructions, among them
+    contractFormation ContractFormationInstruction (0..1)
+    quantityChange QuantityChangeInstruction (0..1)
+    transfer TransferInstruction (0..1)
+    indexTransition IndexTransitionInstruction (0..1)
+    ...
+
+func Qualify_PartialTermination:
+    [qualification BusinessEvent]
+    set is_event:
+        businessEvent -> intent is absent
+            and (primitiveInstruction -> quantityChange only exists
+                or (primitiveInstruction -> quantityChange,
+                    primitiveInstruction -> transfer) only exists)
+            and (QuantityDecreased(...) = True)
+            and businessEvent -> after -> state -> closedState is absent
+```
+
+</div>
+
+<div class="text-sm">
+
+Only a quantity change, or a quantity change plus a cash transfer; the quantity went down; the trade is still open. Then it is a **partial termination**.
+
+Down to zero and closed: a different event.
+
+<div class="mt-4 p-3 rounded-lg bg-teal-50 border-l-4 border-teal-600">
+
+Notes in a chord: C, E and G make C major. Lower the E and the same hand plays C minor.
+
+</div>
+
+</div>
+
+</div>
+
+---
+
+# Example 4: the end of LIBOR, in data
+
+<div class="grid grid-cols-[3fr_2fr] gap-8 mt-4">
+
+<div class="text-xs">
+
+```text
+type IndexTransitionInstruction:
+    priceQuantity PriceQuantity (1..*)
+    effectiveDate date (1..1)
+    cashTransfer Transfer (0..1)
+
+// from the qualification function for this event:
+    set is_event:
+        businessEvent -> intent = EventIntentEnum -> IndexTransition
+            and floatingRateIndexChanged = True
+            and adjustmentSpreadAdded = True
+```
+
+</div>
+
+<div class="text-sm">
+
+For each leg: the new floating rate index and the spread adjustment, the effective date and, where agreed, a compensating payment.
+
+The rule: the intent is an index transition, the index has actually changed, and any spread present is not zero.
+
+<div class="mt-4 p-3 rounded-lg bg-teal-50 border-l-4 border-teal-600">
+
+The Protocol changed the words of the contract. The index transition changes the state of the trade. Two records of one event.
+
+</div>
+
+</div>
 
 </div>
