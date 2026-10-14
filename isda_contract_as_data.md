@@ -445,12 +445,11 @@ No need to convene a market to agree on a shared model.
 
 <div v-click class="mt-8">
 
-Any scheme with a rulebook, technical standards and obligations for many participants is **the same kind of layered library** ISDA started from. The Digital Euro scheme rulebook, drafted with market participants, is one.
+Any scheme with a rulebook, technical standards and obligations for many participants is **the same kind of layered library** ISDA started from.
 
 </div>
 
 <!--
-- The Digital Euro scheme rulebook is being prepared by the ECB with the Rulebook Development Group, which includes market representatives. That much is public (ECB website).
 - The question is not whether to digitalise eventually. It is whether to start with structure or to extract it later at ISDA's cost.
 -->
 
