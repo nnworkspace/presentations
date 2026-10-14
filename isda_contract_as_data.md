@@ -504,28 +504,37 @@ flowchart LR
 -->
 
 ---
-layout: center
-class: text-center
----
 
 # The decision worth making deliberately
 
-<div class="mt-8 text-xl max-w-3xl mx-auto">
+<div class="grid grid-cols-[1fr_auto_1.25fr] gap-5 mt-8 items-stretch">
 
-Start with paper and digitalise later, at ISDA's cost and pace?
+<div class="rounded-xl border border-slate-200 bg-white/60 p-5 opacity-80">
+  <div class="text-xs uppercase tracking-widest text-slate-400 font-semibold">Path A</div>
+  <div class="text-2xl mt-1 mb-4 text-slate-600" style="font-family: adobe-garamond-pro, serif">Paper first, digitalise later</div>
+  <div class="flex items-start gap-3 mb-3"><carbon-document class="text-slate-400 text-lg shrink-0 mt-0.5" /><span>Choices stay hidden in paragraphs</span></div>
+  <div class="flex items-start gap-3 mb-3"><carbon-search class="text-slate-400 text-lg shrink-0 mt-0.5" /><span>Structure extracted afterwards, document by document</span></div>
+  <div class="flex items-start gap-3"><carbon-hourglass class="text-slate-400 text-lg shrink-0 mt-0.5" /><span>ISDA's cost and pace: about a decade</span></div>
+</div>
 
-<div v-click class="mt-6">
+<div class="flex items-center">
+  <div class="w-10 h-10 rounded-full bg-slate-100 border border-slate-200 flex items-center justify-center text-sm text-slate-500">or</div>
+</div>
 
-Or start with **named choices**, **versioned texts** and **a record of every change** from day one?
-
+<div v-click class="rounded-xl border-l-8 border-teal-600 bg-teal-50 dark:bg-teal-900/20 p-5 shadow-sm">
+  <div class="text-xs uppercase tracking-widest text-teal-700 font-semibold">Path B</div>
+  <div class="text-2xl mt-1 mb-4 text-slate-800" style="font-family: adobe-garamond-pro, serif">Structure from day one</div>
+  <div class="flex items-start gap-3 mb-3"><carbon-tag class="text-teal-600 text-lg shrink-0 mt-0.5" /><span><b>Named choices:</b> every option has an identifier</span></div>
+  <div class="flex items-start gap-3 mb-3"><carbon-version class="text-teal-600 text-lg shrink-0 mt-0.5" /><span><b>Versioned texts:</b> every release complete, dated, citable</span></div>
+  <div class="flex items-start gap-3"><carbon-recently-viewed class="text-teal-600 text-lg shrink-0 mt-0.5" /><span><b>A record of every change:</b> who, what, when and why</span></div>
 </div>
 
 </div>
 
-<div v-click class="mt-12 text-base opacity-80">
-
-ISDA did not set out to turn contracts into data. It set out to make a market's paperwork manageable, one step at a time. The data came as a consequence.
-
+<div v-click class="mt-10 flex items-center gap-4">
+  <div class="h-px flex-1 bg-slate-300"></div>
+  <div class="text-base italic text-slate-500 max-w-2xl text-center">ISDA did not set out to turn contracts into data. It set out to make a market's paperwork manageable, one step at a time. The data came as a consequence.</div>
+  <div class="h-px flex-1 bg-slate-300"></div>
 </div>
 
 <!--
