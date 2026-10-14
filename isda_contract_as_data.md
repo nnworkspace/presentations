@@ -147,28 +147,47 @@ Photo illustration. Original photo: <a href="https://commons.wikimedia.org/wiki/
 -->
 
 ---
-layout: center
-class: text-center
----
 
 # The principle
 
-<div class="mt-8 text-2xl leading-relaxed max-w-3xl mx-auto">
+<div class="text-sm opacity-70 -mt-2">ISDA's decade of work, read as one idea in three steps</div>
 
-The legal text stays **authoritative**.
+<div class="grid grid-cols-[1fr_auto_1fr_auto_1fr] gap-3 mt-12 items-stretch">
 
-<div v-click>
+<div class="relative rounded-xl border border-slate-200 bg-white/70 p-5 pt-6 shadow-sm">
+  <div class="absolute -top-4 left-5 w-8 h-8 rounded-full bg-teal-600 text-white text-sm font-semibold flex items-center justify-center">1</div>
+  <carbon-certificate class="text-teal-600 text-3xl" />
+  <div class="text-xs uppercase tracking-widest text-teal-700 font-semibold mt-3">The text</div>
+  <div class="text-2xl mt-1 mb-2 text-slate-800" style="font-family: adobe-garamond-pro, serif">Stays authoritative</div>
+  <div class="text-sm">The signed legal text remains the reference. When data and text disagree, the text wins.</div>
+</div>
 
-Every choice made within it becomes **data with an identifier**.
+<div class="flex items-center justify-center"><carbon-chevron-right class="text-slate-300 text-3xl" /></div>
+
+<div v-click class="relative rounded-xl border border-slate-200 bg-white/70 p-5 pt-6 shadow-sm">
+  <div class="absolute -top-4 left-5 w-8 h-8 rounded-full bg-teal-600 text-white text-sm font-semibold flex items-center justify-center">2</div>
+  <carbon-tag class="text-teal-600 text-3xl" />
+  <div class="text-xs uppercase tracking-widest text-teal-700 font-semibold mt-3">The choices</div>
+  <div class="text-2xl mt-1 mb-2 text-slate-800" style="font-family: adobe-garamond-pro, serif">Become data</div>
+  <div class="text-sm">Every choice made within the text gets an identifier, so it can be counted, compared and checked.</div>
+</div>
+
+<div class="flex items-center justify-center"><carbon-chevron-right class="text-slate-300 text-3xl" /></div>
+
+<div v-click class="relative rounded-xl border border-slate-200 bg-white/70 p-5 pt-6 shadow-sm">
+  <div class="absolute -top-4 left-5 w-8 h-8 rounded-full bg-teal-600 text-white text-sm font-semibold flex items-center justify-center">3</div>
+  <carbon-data-share class="text-teal-600 text-3xl" />
+  <div class="text-xs uppercase tracking-widest text-teal-700 font-semibold mt-3">The computation</div>
+  <div class="text-2xl mt-1 mb-2 text-slate-800" style="font-family: adobe-garamond-pro, serif">Happens once</div>
+  <div class="text-sm">Anything computable is computed once, from one shared model, instead of in every firm.</div>
+</div>
 
 </div>
 
-<div v-click>
-
-Anything computable is **computed once**, from **one shared model**.
-
-</div>
-
+<div v-click class="mt-10 flex items-center gap-4">
+  <div class="h-px flex-1 bg-slate-300"></div>
+  <div class="text-base italic text-slate-500">Underneath the documents, not instead of them.</div>
+  <div class="h-px flex-1 bg-slate-300"></div>
 </div>
 
 <!--
