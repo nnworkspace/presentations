@@ -14,6 +14,10 @@
     {
       "source": "/google_keystore_apis/:match*",
       "destination": "/google_keystore_apis/index.html"
+    },
+    {
+      "source": "/isda_contract_as_data/:match*",
+      "destination": "/isda_contract_as_data/index.html"
     }
   ]
 }
