@@ -133,25 +133,20 @@ A visual stacking of intent.
 <div class="flex items-start justify-center -mt-22">
 
 ```mermaid {scale: 0.45}
-graph TD
-    Req[20-Requirements] --> |references| L[10-Legal]
-    R[30-Rulebook] --> |references| Req
-    BA[40-Business Arch] --> |references| R
-    SA[50-System Arch] --> |references| BA
-    S[60-Specs] --> |references| SA
-    T[70-Tests] --> |references| S
-    C[80-Code] --> |references| T
-    
-    auth[100-Automation] -.->|Enforces| L
-    auth -.->|Enforces| Req
-    auth -.->|Enforces| R
-    auth -.->|Enforces| BA
-    auth -.->|Enforces| SA
-    auth -.->|Enforces| S
-    auth -.->|Enforces| T
-    auth -.->|Enforces| C
-    auth -.->|Generates| Rep[90-Reports]
-    
+flowchart LR
+    subgraph layers[" "]
+        direction BT
+        Req[20‑Requirements] -->|references| L[10‑Legal]
+        R[30‑Rulebook] -->|references| Req
+        BA[40‑Business Arch] -->|references| R
+        SA[50‑System Arch] -->|references| BA
+        S[60‑Specs] -->|references| SA
+        T[70‑Tests] -->|references| S
+        C[80‑Code] -->|references| T
+        Rep[90‑Reports] -->|reports on| C
+    end
+    auth[100‑Automation] -.->|Enforces every layer,<br/>generates the reports| layers
+    style layers fill:#f8fafc,stroke:#cbd5e1
 ```
 
 </div>
