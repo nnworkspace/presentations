@@ -408,37 +408,57 @@ After 2008, every regime wrote reporting rules in prose, and every bank translat
 -->
 
 ---
-layout: center
----
 
 # Three things easy to confuse
 
-<div class="mt-8 text-xl space-y-6 max-w-3xl">
+<div class="text-sm opacity-70 -mt-2">The one slide to remember</div>
+
+<div class="grid grid-cols-[1fr_1.15fr] gap-6 mt-6 items-stretch">
+
+<div class="flex flex-col gap-4">
 
 <div v-click>
-
-A better reading experience is **not** digitalisation.
-
+<div class="rounded-xl border border-slate-200 bg-white/60 px-5 py-4 opacity-80 flex gap-4">
+  <carbon-view class="text-slate-400 text-2xl shrink-0 mt-1" />
+  <div>
+    <div class="flex items-center gap-2 text-xs uppercase tracking-widest text-slate-400 font-semibold"><carbon-close-outline /> Not digitalisation</div>
+    <div class="text-xl mt-1 text-slate-600" style="font-family: adobe-garamond-pro, serif">A better reading experience</div>
+    <div class="text-sm mt-1">A portal improves access. The rules underneath stay as they were.</div>
+  </div>
+</div>
 </div>
 
 <div v-click>
-
-A new file format is **not** digitalisation either.
+<div class="rounded-xl border border-slate-200 bg-white/60 px-5 py-4 opacity-80 flex gap-4">
+  <carbon-document-export class="text-slate-400 text-2xl shrink-0 mt-1" />
+  <div>
+    <div class="flex items-center gap-2 text-xs uppercase tracking-widest text-slate-400 font-semibold"><carbon-close-outline /> Not digitalisation</div>
+    <div class="text-xl mt-1 text-slate-600" style="font-family: adobe-garamond-pro, serif">A new file format</div>
+    <div class="text-sm mt-1">A new editor improves maintenance. It does not say what changed, or why.</div>
+  </div>
+</div>
+</div>
 
 </div>
 
-<div v-click class="p-4 border-l-8 border-teal-600 bg-gray-100 dark:bg-gray-800">
-
-Digitalisation starts when **every change can be traced** (who changed what, when and why) and **every reader can say which version they relied on**.
-
+<div v-click class="rounded-xl border-l-8 border-teal-600 bg-teal-50 dark:bg-teal-900/20 px-6 py-5 shadow-sm flex flex-col">
+  <div class="flex items-center gap-2 text-xs uppercase tracking-widest text-teal-700 font-semibold"><carbon-checkmark-outline /> Digitalisation starts when</div>
+  <div class="flex gap-4 mt-5">
+    <carbon-recently-viewed class="text-teal-600 text-2xl shrink-0 mt-1" />
+    <div><div class="text-xl text-slate-800" style="font-family: adobe-garamond-pro, serif">Every change can be traced</div><div class="text-sm mt-1">Who changed what, when, and why.</div></div>
+  </div>
+  <div class="flex gap-4 mt-5">
+    <carbon-version class="text-teal-600 text-2xl shrink-0 mt-1" />
+    <div><div class="text-xl text-slate-800" style="font-family: adobe-garamond-pro, serif">Every reader can name the version</div><div class="text-sm mt-1">The exact text they relied on, at the time they relied on it.</div></div>
+  </div>
 </div>
 
 </div>
 
-<div v-click class="mt-8 text-lg">
-
-The first two can be added at any time. **The third cannot.** A change history, with its reasons, only exists from the day you start keeping it.
-
+<div v-click class="mt-8 flex items-center gap-4">
+  <div class="h-px flex-1 bg-slate-300"></div>
+  <div class="text-base italic text-slate-500 text-center max-w-2xl">The first two can be added at any time. The third cannot: a change history only exists from the day you start keeping it.</div>
+  <div class="h-px flex-1 bg-slate-300"></div>
 </div>
 
 <!--
