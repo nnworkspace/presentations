@@ -25,5 +25,8 @@
     "overrides": {
       "markdown-it": "^14.1.0"
     }
+  },
+  "devDependencies": {
+    "playwright-chromium": "^1.64.0"
   }
 }
