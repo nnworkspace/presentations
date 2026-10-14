@@ -1074,7 +1074,7 @@ One trade, end to end
   <div class="px-4 py-2 text-xs">
     <div class="flex gap-3 py-1 border-b border-dashed border-slate-200 last:border-0"><div class="w-2/5 shrink-0 text-slate-500">Base Currency</div><div class="text-slate-800">EUR</div></div>
     <div class="flex gap-3 py-1 border-b border-dashed border-slate-200 last:border-0"><div class="w-2/5 shrink-0 text-slate-500">Eligible Credit Support</div><div class="text-slate-800">EUR cash (100%); German government bonds up to 10 years (98%)</div></div>
-    <div class="flex gap-3 py-1 border-b border-dashed border-slate-200 last:border-0"><div class="w-2/5 shrink-0 text-slate-500">Threshold</div><div class="text-slate-800">None: margin from the first euro</div></div>
+    <div class="flex gap-3 py-1 border-b border-dashed border-slate-200 last:border-0"><div class="w-2/5 shrink-0 text-slate-500">Threshold</div><div class="text-slate-800">None: all exposure is collateralised (once the amount due reaches the Minimum Transfer Amount)</div></div>
     <div class="flex gap-3 py-1 border-b border-dashed border-slate-200 last:border-0"><div class="w-2/5 shrink-0 text-slate-500">Minimum Transfer Amount</div><div class="text-slate-800">EUR 250,000</div></div>
     <div class="flex gap-3 py-1 border-b border-dashed border-slate-200 last:border-0"><div class="w-2/5 shrink-0 text-slate-500">Rounding</div><div class="text-slate-800">EUR 10,000</div></div>
     <div class="flex gap-3 py-1 border-b border-dashed border-slate-200 last:border-0"><div class="w-2/5 shrink-0 text-slate-500">Valuation Agent</div><div class="text-slate-800">The party making the demand</div></div>
@@ -1092,10 +1092,10 @@ One trade, end to end
   <div><div class="text-lg leading-snug text-slate-800" style="font-family: adobe-garamond-pro, serif">Every business day</div><div class="text-sm mt-0.5 leading-snug">Each side values the swap. If it owes more than the minimum, it transfers collateral.</div></div>
 </div><div class="flex gap-3 mb-4">
   <carbon-scales class="text-teal-600 text-xl shrink-0 mt-0.5" />
-  <div><div class="text-lg leading-snug text-slate-800" style="font-family: adobe-garamond-pro, serif">Why there is no threshold</div><div class="text-sm mt-0.5 leading-snug">EU margin rules require variation margin from the first euro for firms in scope.</div></div>
+  <div><div class="text-lg leading-snug text-slate-800" style="font-family: adobe-garamond-pro, serif">Why there is no threshold</div><div class="text-sm mt-0.5 leading-snug">EU margin rules allow no unsecured allowance for firms in scope.</div></div>
 </div><div class="flex gap-3 mb-4">
   <carbon-tag class="text-teal-600 text-xl shrink-0 mt-0.5" />
-  <div><div class="text-lg leading-snug text-slate-800" style="font-family: adobe-garamond-pro, serif">Again, elections</div><div class="text-sm mt-0.5 leading-snug">The CSA is a standard text with a page of choices. The haircut (98%) is one of them.</div></div>
+  <div><div class="text-lg leading-snug text-slate-800" style="font-family: adobe-garamond-pro, serif">Again, elections</div><div class="text-sm mt-0.5 leading-snug">The CSA is a standard text with a page of choices. The haircut (bonds count at 98%, a 2% haircut) is one of them.</div></div>
 </div>
 
 </div>
@@ -1105,6 +1105,8 @@ One trade, end to end
 <div class="abs-bl ml-14 mb-3 text-[10px] opacity-50">Illustrative. Fictional parties and figures; document wording paraphrased, not ISDA text.</div>
 
 <!--
+- Threshold vs Minimum Transfer Amount: the threshold is exposure left uncovered for good (here none; before 2016, creditworthy clients often had one, which left much exposure unsecured in 2008). The Minimum Transfer Amount only sets how big a change must be before collateral moves (here EUR 250,000; the EU rules cap it at EUR 500,000). Smaller amounts wait, then are covered in full.
+- Example: if Fund B owes EUR 7 million on the swap, a EUR 10 million threshold would mean no collateral at all; with no threshold, Bank A can call for the full EUR 7 million.
 - Title transfer: the collateral changes owner, and the obligation is to return equivalent collateral.
 - Initial margin would need a separate document with a custodian; it is left out here to keep the example small.
 - The figures are illustrative.
