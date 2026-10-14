@@ -434,48 +434,48 @@ The first two can be added at any time. **The third cannot.** A change history, 
 
 # Lessons for complex programmes
 
-<div class="grid grid-cols-2 gap-x-10 gap-y-5 mt-6">
+<div class="text-sm opacity-70 -mt-2">Seven lessons from ISDA, in three groups</div>
 
-<div v-click>
+<div class="grid grid-cols-3 gap-5 mt-6 items-stretch">
 
-**1. Find the seams before building.** Digitalisation followed the existing split between standard text, elections and vocabulary.
-
+<div class="rounded-xl border border-slate-200 bg-white/70 px-4 py-4 shadow-sm">
+  <div class="text-xs uppercase tracking-widest text-teal-700 font-semibold mb-3 pb-2 border-b border-slate-200">Structure</div>
+  <div class="flex gap-3 mb-3">
+    <carbon-cut class="text-teal-600 text-lg shrink-0 mt-0.5" />
+    <div><div class="text-base leading-snug text-slate-800" style="font-family: adobe-garamond-pro, serif"><span class="text-teal-600">1.</span> Find the seams before building</div><div class="text-xs mt-0.5 leading-snug">Digitalisation followed the existing split between standard text, elections and vocabulary.</div></div>
+  </div>
+  <div class="flex gap-3 mb-3">
+    <carbon-list-checked class="text-teal-600 text-lg shrink-0 mt-0.5" />
+    <div><div class="text-base leading-snug text-slate-800" style="font-family: adobe-garamond-pro, serif"><span class="text-teal-600">2.</span> Standardise before you digitalise</div><div class="text-xs mt-0.5 leading-snug">The most useful step was the least technical: deciding what the options are.</div></div>
+  </div>
+  <div class="flex gap-3 mb-3">
+    <carbon-version class="text-teal-600 text-lg shrink-0 mt-0.5" />
+    <div><div class="text-base leading-snug text-slate-800" style="font-family: adobe-garamond-pro, serif"><span class="text-teal-600">3.</span> Versions beat supplements</div><div class="text-xs mt-0.5 leading-snug">Released versions with a known state are easier to cite, test and govern.</div></div>
+  </div>
 </div>
 
-<div v-click>
-
-**2. Standardise before you digitalise.** The most useful step was the least technical: deciding what the options are.
-
+<div v-click class="rounded-xl border border-slate-200 bg-white/70 px-4 py-4 shadow-sm">
+  <div class="text-xs uppercase tracking-widest text-teal-700 font-semibold mb-3 pb-2 border-b border-slate-200">Governance</div>
+  <div class="flex gap-3 mb-3">
+    <carbon-partnership class="text-teal-600 text-lg shrink-0 mt-0.5" />
+    <div><div class="text-base leading-snug text-slate-800" style="font-family: adobe-garamond-pro, serif"><span class="text-teal-600">4.</span> Open governance helps mutualisation</div><div class="text-xs mt-0.5 leading-snug">Competitors contribute to a model they do not have to trust one party with.</div></div>
+  </div>
+  <div class="flex gap-3 mb-3">
+    <carbon-rule class="text-teal-600 text-lg shrink-0 mt-0.5" />
+    <div><div class="text-base leading-snug text-slate-800" style="font-family: adobe-garamond-pro, serif"><span class="text-teal-600">5.</span> Agree the interpretation once</div><div class="text-xs mt-0.5 leading-snug">One executable reading, governed openly, beats many private ones.</div></div>
+  </div>
 </div>
 
-<div v-click>
-
-**3. Versions beat supplements.** Released versions with a known state are easier to cite, test and govern.
-
-</div>
-
-<div v-click>
-
-**4. Open governance helps mutualisation.** Competitors contribute to a model they do not have to trust one party with.
-
-</div>
-
-<div v-click>
-
-**5. Agree the interpretation once.** One executable reading, governed openly, beats many private ones.
-
-</div>
-
-<div v-click>
-
-**6. Do not forget the plumbing.** Notices, amendments and adherence are dull, and essential.
-
-</div>
-
-<div v-click class="col-span-2">
-
-**7. Expect it to take a decade,** unless you start with the structure in place.
-
+<div v-click class="rounded-xl border border-slate-200 bg-white/70 px-4 py-4 shadow-sm">
+  <div class="text-xs uppercase tracking-widest text-teal-700 font-semibold mb-3 pb-2 border-b border-slate-200">Operations</div>
+  <div class="flex gap-3 mb-3">
+    <carbon-connect class="text-teal-600 text-lg shrink-0 mt-0.5" />
+    <div><div class="text-base leading-snug text-slate-800" style="font-family: adobe-garamond-pro, serif"><span class="text-teal-600">6.</span> Do not forget the plumbing</div><div class="text-xs mt-0.5 leading-snug">Notices, amendments and adherence are dull, and essential.</div></div>
+  </div>
+  <div class="flex gap-3 mb-3">
+    <carbon-hourglass class="text-teal-600 text-lg shrink-0 mt-0.5" />
+    <div><div class="text-base leading-snug text-slate-800" style="font-family: adobe-garamond-pro, serif"><span class="text-teal-600">7.</span> Expect it to take a decade</div><div class="text-xs mt-0.5 leading-snug">Unless you start with the structure in place.</div></div>
+  </div>
 </div>
 
 </div>
