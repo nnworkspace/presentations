@@ -214,87 +214,64 @@ No single system replaced the paper. Each component attaches to **one layer** of
 - Digital Regulatory Reporting (DRR): one shared reading of reporting rules, as executable code.
 - FpML, UTI, UPI: messages and identifiers that join things up.
 - Protocols and the Notices Hub: the plumbing that keeps the estate in motion.
-- The next two slides take these in pairs.
+- The next slide takes the four main components one by one.
 -->
 
 ---
 
-# Choices as data, versions instead of supplements
+# Choices, versions, one model, one reading
 
-<div class="grid grid-cols-2 gap-10 mt-6">
+<div class="text-sm opacity-70 -mt-2">The four components, from the legal end to the technical end</div>
 
-<div v-click>
+<div class="grid grid-cols-2 gap-4 mt-5">
 
-### Named choices
-
-Most negotiated text is one of a handful of known positions, written differently each time.
-
-The **Clause Library** names them: a stable identifier, defined wording, a few variables.
-
-"Variant 2 of the threshold clause, EUR 10 million" instead of a drafted paragraph.
-
-A paragraph can only be read. **A named choice can be counted, compared and checked.**
-
+<div class="rounded-xl border border-slate-200 bg-white/70 px-4 py-3 shadow-sm flex gap-3">
+  <carbon-tag class="text-teal-600 text-2xl shrink-0 mt-1" />
+  <div>
+    <div class="text-xs uppercase tracking-widest text-teal-700 font-semibold">Named choices · Clause Library</div>
+    <div class="text-xl mt-1 mb-1 text-slate-800" style="font-family: adobe-garamond-pro, serif">A paragraph becomes a selection</div>
+    <div class="text-sm leading-snug">Each common position gets an identifier and a few variables: "variant 2 of the threshold clause, EUR 10 million". It can now be counted, compared and checked.</div>
+  </div>
 </div>
 
-<div v-click>
+<div v-click class="rounded-xl border border-slate-200 bg-white/70 px-4 py-3 shadow-sm flex gap-3">
+  <carbon-version class="text-teal-600 text-2xl shrink-0 mt-1" />
+  <div>
+    <div class="text-xs uppercase tracking-widest text-teal-700 font-semibold">Complete versions · 2021 Definitions</div>
+    <div class="text-xl mt-1 mb-1 text-slate-800" style="font-family: adobe-garamond-pro, serif">Versions instead of supplements</div>
+    <div class="text-sm leading-snug">The 2006 book grew by more than 70 supplements. The 2021 book is one digital text, released in numbered versions. <b>Every trade can say which version it relies on.</b></div>
+  </div>
+</div>
 
-### Complete versions
+<div v-click class="rounded-xl border border-slate-200 bg-white/70 px-4 py-3 shadow-sm flex gap-3">
+  <carbon-data-share class="text-teal-600 text-2xl shrink-0 mt-1" />
+  <div>
+    <div class="text-xs uppercase tracking-widest text-teal-700 font-semibold">One model · the CDM</div>
+    <div class="text-xl mt-1 mb-1 text-slate-800" style="font-family: adobe-garamond-pro, serif">What a trade is, and what happens to it</div>
+    <div class="text-sm leading-snug">Started at ISDA, joined by ISLA and ICMA, at <b>FINOS</b> (Linux Foundation) since 2023. Released like software. <b>Anyone may propose; the maintainers decide.</b></div>
+  </div>
+</div>
 
-The 2006 Definitions grew by more than **70 supplements** over fifteen years. To know what a term meant, you had to know which were in force, and read them in order.
-
-The **2021 Definitions** are one digital book. Each change produces a new numbered version.
-
-**Every trade can say which version it relies on.**
-
+<div v-click class="rounded-xl border border-slate-200 bg-white/70 px-4 py-3 shadow-sm flex gap-3">
+  <carbon-rule class="text-teal-600 text-2xl shrink-0 mt-1" />
+  <div>
+    <div class="text-xs uppercase tracking-widest text-teal-700 font-semibold">One reading · DRR</div>
+    <div class="text-xl mt-1 mb-1 text-slate-800" style="font-family: adobe-garamond-pro, serif">Rules as code</div>
+    <div class="text-sm leading-snug">Working groups agree one interpretation of each reporting rule, coded on the model. Live from the US (2022) to Hong Kong (2025). <b>A shared reading is not an official one.</b></div>
+  </div>
 </div>
 
 </div>
 
 <!--
+- Top row, the legal side: choices become data, and the vocabulary is versioned. Bottom row, the technical side: one model, and one shared reading of the rules on top of it.
 - The Clause Library is the least technical step and the one that makes everything after it possible. The legal content does not change; the choice is no longer hidden in a paragraph.
 - ISDA Create, the negotiation platform, started with initial margin documents: negotiation produces the signed document and the structured election data at the same time. No re-keying.
-- The 2021 Interest Rate Derivatives Definitions came into use on 2021-10-04, published on ISDA's MyLibrary platform.
-- It sounds like a publishing decision. It is really a decision about how a shared vocabulary is governed.
--->
-
----
-
-# One shared model, one shared reading
-
-<div class="grid grid-cols-2 gap-10 mt-6">
-
-<div v-click>
-
-### The Common Domain Model
-
-A machine-readable model of what a trade is and what happens to it.
-
-Started at ISDA, joined by ISLA and ICMA, contributed to **FINOS** (Linux Foundation) in 2023.
-
-Released like software: numbered versions, release notes, a public repository. **Anyone may propose a change; the maintainers decide.**
-
-</div>
-
-<div v-click>
-
-### Rules as code
-
-After 2008, every regime wrote reporting rules in prose, and every bank translated them separately.
-
-**Digital Regulatory Reporting**: working groups agree one interpretation, coded on top of the model. Live from the US (2022) to Hong Kong (2025).
-
-**A shared reading is not an official one.** The obligation stays with each firm.
-
-</div>
-
-</div>
-
-<!--
+- The 2021 Interest Rate Derivatives Definitions came into use on 2021-10-04, published on ISDA's MyLibrary platform. It sounds like a publishing decision. It is really a decision about how a shared vocabulary is governed.
 - CDM governance matters as much as the model: a model owned by one party is a product; under an open licence and open governance it is infrastructure. Open does not mean ungoverned.
 - CDM 7 (announced 2026-08-14) brought more than 130 changes, including collateral agreements. Version 8 is in development; the Clause Library structure entered it in July 2026.
 - DRR go-lives: CFTC 2022-12-05, Japan 2024-04-01, EU EMIR Refit 2024-04-29, UK EMIR 2024-09-30, Australia and Singapore 2024-10-21, Canada 2025-07-25, Hong Kong 2025-09-29.
-- The interesting part is not the code. Competitors agreed to share one reading of the law, in a form that can be executed, tested and versioned. A consistent reading can still be consistently wrong, which is why it stays reviewable.
+- The interesting part is not the code. Competitors agreed to share one reading of the law, in a form that can be executed, tested and versioned. A consistent reading can still be consistently wrong, which is why it stays reviewable. The obligation stays with each firm.
 - Plumbing, briefly: Protocols amended millions of contracts for the end of LIBOR; the Notices Hub (launched 2025-07-15) gives one place to deliver and receive notices, with a record of when.
 -->
 
